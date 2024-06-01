@@ -5,16 +5,9 @@ import java.util.Scanner;
 
 public class Library {
     protected String name;
-    private int qtBooks;
     List<Book> books = new ArrayList<Book>();
+
     //Constructor
-    public Library(String name, int qtBooks) {
-        this.name = name;
-        this.qtBooks = qtBooks;
-    }
-    public Library(int qtBooks) {
-        this.qtBooks = qtBooks;
-    }
     public Library(String name){
         this.name = name;
     }
@@ -22,13 +15,9 @@ public class Library {
     public String getName() {
         return name;
     }
-    public String getQtBooks() {
-        return String.valueOf(qtBooks);
-    }
     public void setName(String name) {
         this.name = name;
     }
-
     //Additional methods
     public void addBook(Book book) {
         books.add(book);
