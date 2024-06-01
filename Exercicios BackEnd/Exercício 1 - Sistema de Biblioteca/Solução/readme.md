@@ -14,7 +14,7 @@ O bibliotecário deseja obter as informações de todos os livros cadastrados na
     List<Livro> livros = new ArrayList<>();
  ~~~
 ## Exemplo de uso
-Implemente um programa principal (classe Main) que:
+Implemente um programa principal (classe Solução.Main) que:
 1. Crie pelo menos 3 objetos da classe Livro diferentes
 2. Crie um objeto Biblioteca e adicione os livros criados a ela.
 3. Utilize o método listarLivros() da classe Biblioteca para exibir todos os livros presentes na biblioteca no console.
