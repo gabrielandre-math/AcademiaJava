@@ -10,6 +10,9 @@ Você foi contratado para desenvolver um sistema básico para um biblioteca. O s
  ~~~
 O bibliotecário deseja obter as informações de todos os livros cadastrados na biblioteca.
 > Dica: Utilize a classe List, e seus métodos add e get para manipular a lista de livros.
+~~~java
+    List<Livro> livros = new ArrayList<>();
+ ~~~
 ## Exemplo de uso
 Implemente um programa principal (classe Main) que:
 1. Crie pelo menos 3 objetos da classe Livro diferentes
