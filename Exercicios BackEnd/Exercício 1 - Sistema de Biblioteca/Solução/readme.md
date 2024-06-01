@@ -18,3 +18,15 @@ Implemente um programa principal (classe Solução.Main) que:
 1. Crie pelo menos 3 objetos da classe Livro diferentes
 2. Crie um objeto Biblioteca e adicione os livros criados a ela.
 3. Utilize o método listarLivros() da classe Biblioteca para exibir todos os livros presentes na biblioteca no console.
+
+________________________
+# UML Desenvolvido
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/e08aaee6-ee9f-499d-a6d6-52d3bdd4ade0)
+### O que foi aplicado
+Utilizei agregação, pois uma biblioteca pode conter vários livros, mas cada livro pode não depender de uma biblioteca para existir.
+- Agregação:
+ Uma Library (biblioteca) pode conter múltiplos Books (livros).
+- A existência de Books não depende diretamente da Library, ou seja, um Book pode existir independentemente de uma Library.
+- A relação é do tipo "tem um", onde a Library "tem" livros, mas os livros não necessariamente precisam da biblioteca para existir.
+
+Criado por _Gabriel André._
