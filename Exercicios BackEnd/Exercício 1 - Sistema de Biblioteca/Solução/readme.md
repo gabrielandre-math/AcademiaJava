@@ -21,7 +21,7 @@ Implemente um programa principal (classe Solução.Main) que:
 
 ________________________
 # UML Desenvolvido
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/e08aaee6-ee9f-499d-a6d6-52d3bdd4ade0)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/c91c7184-688d-4682-8d7f-db73370d522e)
 ### O que foi aplicado
 Utilizei agregação, pois uma biblioteca pode conter vários livros, mas cada livro pode não depender de uma biblioteca para existir.
 - Agregação:
