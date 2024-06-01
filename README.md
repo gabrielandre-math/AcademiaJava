@@ -11,4 +11,4 @@ Neste repositório estarei organizando minhas soluções e meu progresso da 7ª 
 ## Projeto Final
 
 
-Criado por _Gabriel André de Lima Silva_
+Criado por _Gabriel André de Lima Silva._
