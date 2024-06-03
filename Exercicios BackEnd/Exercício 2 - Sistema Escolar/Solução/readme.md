@@ -23,5 +23,13 @@ Implementeum programa principal (classe Main) que:
 1. Crie 05 alunos com diferentes valores para nome, idade e matrícula.
 2. Crie 02 turmas com seu nome de turma e adicione os alunos a ambas.
 3. Utilize o método listarAlunos() da classe Turma para exibir todos os alunos presentes em cada turma.
-   
+
+# UML Desenvolvido
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/1160b150-da48-4066-8b2c-25971af8dfe1)
+## O que foi aplicado?
+No cenário da minha solução, assumi que um estudante não poderia existir no sistema sem estar associado a uma turma. Nesse sentido, apliquei conceitos de composição. Ou seja, uma turma pode existir sem alunos, mas um aluno não pode existir sem estar associado a uma turma.
+1. Um estudante não pode existir sem uma turma (dependência forte, característica da composição).
+2. Uma turma pode existir sem ter estudantes (a existência da turma não depende dos estudantes, permitindo a existência independente).
+
+
 Criado por _Gabriel André._
