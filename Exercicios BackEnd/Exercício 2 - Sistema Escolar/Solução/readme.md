@@ -25,7 +25,8 @@ Implementeum programa principal (classe Main) que:
 3. Utilize o método listarAlunos() da classe Turma para exibir todos os alunos presentes em cada turma.
 
 # UML Desenvolvido
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/dc52ccdf-7e0a-4460-92b9-211a132f4e08)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/32e99993-f0f7-44c2-b631-8f16043e411b)
+
 
 ## O que foi aplicado?
 No cenário da minha solução, assumi que um estudante não poderia existir no sistema sem estar associado a uma turma. Nesse sentido, apliquei conceitos de composição. Ou seja, uma turma pode existir sem alunos, mas um aluno não pode existir sem estar associado a uma turma.
