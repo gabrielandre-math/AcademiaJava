@@ -17,8 +17,8 @@ Implemente um programa principal (classe Main) que:
    
 | Nome          | Valor Unitário | Qtd | Sub-total  |
 |---------------|:--------------:|----:|-----------:|
-| Mouse Gamer   | R$ 1200,00     |   2 | R$ 2400,00 |
-| Total:        |                |     | R$ 2400,00 |
+| Mouse Gamer   | R$ 60,00       |2    | R$ 120,00  |
+| Total:        |                |     | R$ 120,00  |
 
 
 Criado por _Gabriel André._
