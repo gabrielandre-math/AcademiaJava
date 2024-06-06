@@ -25,7 +25,8 @@ Implementeum programa principal (classe Main) que:
 3. Utilize o método listarAlunos() da classe Turma para exibir todos os alunos presentes em cada turma.
 
 # UML Desenvolvido
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/4de6c93c-a2a9-45c3-9e75-01f45615836d)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/218f14c8-27f0-4b47-a95c-f55085ee7bcf)
+
 
 
 
