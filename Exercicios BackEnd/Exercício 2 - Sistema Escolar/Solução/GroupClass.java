@@ -72,7 +72,7 @@ public class GroupClass {
         System.out.println("[ 1 ] - Cadastrar aluno");
         System.out.println("[ 2 ] - Listar turmas");
         System.out.println("[ 3 ] - Listar alunos");
-        System.out.println("[ 3 ] - Sair");
+        System.out.println("[ 4 ] - Sair");
     }
     //Exist any class?
     public boolean findStudentClassIntoGroup() {
