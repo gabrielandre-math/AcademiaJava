@@ -57,14 +57,6 @@ public class ShoppingCart {
         }
         return totalPrice;
     }
-    public void countProductsInShoppingCart() {
-        if (products.isEmpty()) {
-            messageCart();
-        } else {
-            listProductsInShoppingCart();
-        }
-    }
-
 
     public void initialScreen() {
         System.out.println("Digite a opção: ");
