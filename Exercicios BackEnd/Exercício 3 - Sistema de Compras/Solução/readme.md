@@ -21,7 +21,8 @@ Implemente um programa principal (classe Solução.Main) que:
 | Total:        |                |     | R$ 120,00  |
 
 # UML Desenvolvido
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/75b0c065-2a4d-41a2-ad1f-d27171e04470)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/d58fde0e-4dbd-4b75-8ab0-08b7e8251d72)
+
 ## O que foi aplicado?
 No cenário da minha solução, um carrinho de compras pode conter vários produtos, mas não depende diretamente desses produtos para existir, assim como os produtos não dependem de um carrinho para existir. Nesse sentido, foi utilizada a agregação para implementar a solução.
 ## Relacionamento de Agregação entre `ShoppingCart` e `Product`
