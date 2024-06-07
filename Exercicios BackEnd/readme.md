@@ -3,7 +3,7 @@ Os exercícios deste repositório são referentes ao core da linguagem Java, pro
 
 ## O que esperar das soluções?
 - Diagrama UML
-- Análise de requisitos
+- Análise de técnicas implementadas
 - Complexidade de tempo (caso precise)
 - Esboço criativo
 
