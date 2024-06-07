@@ -10,7 +10,7 @@ Você foi contratado para desenvolver um sistema básico de compras. O sistema d
   quantidade para os produtos
 ~~~
 ## Exemplo de uso
-Implemente um programa principal (classe Main) que:
+Implemente um programa principal (classe Solução.Main) que:
 1. Crie alguns produtos diferentes.
 2. Crie e adicione pelo menos 03 produtos ao carrinho de compras.
 3. Após, informe no console, os produtos que estão no carrinho e seus sub-totais, bem como o valor total da compra:
