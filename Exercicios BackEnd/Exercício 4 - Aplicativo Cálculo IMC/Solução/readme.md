@@ -14,9 +14,9 @@ Crie também um método chamado _diagnostico()_ que utiliza o método _calcularI
 - Obesidade grau I = IMC entre 30 e 34,99 kg/m²
 - Obesidade grau II = IMC entre 35 e 39,99 kg/m²
 - Obesidade grau III (obesidade mórbida) = IMC igual ou maior que 40 kg/m²
-
+________________________
 Escreva uma classe chamada _Principal_ em que se criam 3 instâncias da classe _Paciente_ com valores diferentes e se imprime no console o resultado dos dois métodos criados.
-
+________________________
 ## Bônus
 Crie um atributo nome, para a classe paciente, e um método _setNome()_, para dar nome aos pacientes. Após, escreva no console a mensagem configurada anteriormente junto ao nome do paciente.
 Exemplo:
