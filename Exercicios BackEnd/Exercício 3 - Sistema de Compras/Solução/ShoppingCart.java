@@ -41,11 +41,13 @@ public class ShoppingCart {
         int i = 0;
         for (Product product : products) {
             i++;
+            System.out.println("________________________________________");
             System.out.println("Produto " + i + ": " + product.getName());
             System.out.println("________________________________________");
             System.out.println("Nome: " + product.getName());
             System.out.println("Valor: " + product.getPrice());
             System.out.println("Quantidade: " + product.getQuantityProducts());
+            System.out.println("Subtotal: " + product.getQuantityProducts() * product.getPrice());
         }
     }
     public double countProductsInCart() {
@@ -62,6 +64,8 @@ public class ShoppingCart {
             listProductsInShoppingCart();
         }
     }
+
+
     public void initialScreen() {
         System.out.println("Digite a opção: ");
         System.out.println("[ 1 ] - Cadastrar produto");

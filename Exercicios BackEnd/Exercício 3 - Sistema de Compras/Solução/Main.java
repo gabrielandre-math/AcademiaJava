@@ -19,7 +19,7 @@ public class Main {
                     cart.listProductsInShoppingCart();
                     System.out.println("_____________________________________");
                     System.out.printf("Total do carrinho: R$%.2f", cart.countProductsInCart());
-                    System.out.println("");
+                    System.out.println();
                     break;
                 default:
                     System.out.println("Você saiu!");
