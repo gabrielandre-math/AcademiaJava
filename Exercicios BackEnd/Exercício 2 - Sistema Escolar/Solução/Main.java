@@ -9,17 +9,12 @@ public class Main {
         GroupClass turma2 = new GroupClass("Turma 2", "2A");
         group.allClasses.add(turma1);
         group.allClasses.add(turma2);
-        Student student1 = new Student();
-        Student student2 = new Student();
-        Student student3 = new Student();
-
-
+        Student student = new Student();
         int controller = 0;
         do {
             group.initialScreen();
             Scanner sc = new Scanner(System.in);
             controller = sc.nextInt();
-
             switch (controller) {
                 case 1:
                     System.out.println("Você deseja cadastrar esse aluno em qual turma:");
@@ -28,14 +23,16 @@ public class Main {
                     int controller2 = sc.nextInt();
                     switch (controller2) {
                         case 1:
-                            turma1.addStudentintoClasse(student1.addStudent());
-                            turma1.addStudentintoClasse(student2.addStudent());
-                            turma1.addStudentintoClasse(student3.addStudent());
+                            for (int i = 0; i < 3; i++) {
+                                System.out.println("Cadastrando o aluno: " + (i+1));
+                                turma1.addStudentintoClasse(student.addStudent());
+                            }
                             break;
                         case 2:
-                            turma2.addStudentintoClasse(student1.addStudent());
-                            turma2.addStudentintoClasse(student2.addStudent());
-                            turma2.addStudentintoClasse(student3.addStudent());
+                            for (int i = 0; i < 3; i++) {
+                                System.out.println("Cadastrando o aluno: " + (i+1));
+                                turma2.addStudentintoClasse(student.addStudent());
+                            }
                             break;
                         default:
                             System.out.println("Opção inválida!");
