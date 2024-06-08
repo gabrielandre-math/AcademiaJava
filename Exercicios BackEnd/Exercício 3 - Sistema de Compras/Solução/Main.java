@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         ShoppingCart cart = new ShoppingCart();
-        Product product = new Product();
         Scanner sc = new Scanner(System.in);
         int controller = 0;
         do {
@@ -11,6 +10,7 @@ public class Main {
             controller = sc.nextInt();
             switch (controller) {
                 case 1:
+                    Product product = new Product();
                     cart.addProductIntoShoppingCart(product.addProduct());
                     break;
                 case 2:
