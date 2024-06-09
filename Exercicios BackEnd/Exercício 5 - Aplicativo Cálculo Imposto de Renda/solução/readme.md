@@ -15,7 +15,7 @@ A tabela de descontos do IRPF 2024 é a seguinte:
 _Tabela-1 Faixa IRPF 2024_
 
 A tabela abaixo mostra um exemplo de cálculo para um salário de R$ 4.000,00:
-| Faixas do IR          | Parcela salarial em cada faixa |  Alíquota | Imposto pago sobre a parcela Z |
+| Faixas do IR          | Parcela salarial em cada faixa |  Alíquota | Imposto pago sobre a parcela   |
 |-----------------------|:------------------------------:|----------:| ------------------------------:|
 |    1                  |          Até R$ 2.112          |  isento   |              zero              |
 |    2                  |     R$ 714,65                  |  7,5%     |            R$53,59             |
