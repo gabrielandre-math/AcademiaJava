@@ -26,7 +26,8 @@ Exemplo:
 # UML Desenvolvido
 ![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/5394fec3-efff-4f46-a5f7-15a5551f1cb7)
 ## O que foi aplicado?
-No cenário da minha solução, um paciente só pode existir se estiver associado a um hospital.
+Composição entre classes.
+
 ### Resumo do Cenário de Composição
 
 No meu cenário, foi aplicada a composição entre as classes `Hospital` e `HospitalPatient`, com as seguintes características:
