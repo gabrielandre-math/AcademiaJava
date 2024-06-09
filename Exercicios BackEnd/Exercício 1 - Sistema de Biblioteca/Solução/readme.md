@@ -21,14 +21,29 @@ Implemente um programa principal (classe Solução.Main) que:
 
 ________________________
 # UML Desenvolvido
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/92631d65-9811-4568-bcb0-f14e576f96eb)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/d3ea2988-03da-4eb6-9a66-d3b1c8c4513e)
+
 
 
 ### O que foi aplicado
-Utilizei agregação, pois uma biblioteca pode conter vários livros, mas cada livro pode não depender de uma biblioteca para existir.
-- Agregação:
- Uma Library (biblioteca) pode conter múltiplos Books (livros).
-- A existência de Books não depende diretamente da Library, ou seja, um Book pode existir independentemente de uma Library.
-- A relação é do tipo "tem um", onde a Library "tem" livros, mas os livros não necessariamente precisam da biblioteca para existir.
+Utilizei composição, no meu cenário, pois uma biblioteca pode conter vários livros e cada livro depende diretamente de uma biblioteca para existir.
+# Composição
+
+- Uma **Library** (biblioteca) contém múltiplos **Books** (livros).
+- A existência de **Books** depende diretamente da **Library**, ou seja, um **Book** não pode existir independentemente de uma **Library**.
+- A relação é do tipo "é parte de", onde os **Books** são parte integrante da **Library** e não podem existir sem ela.
+
+## Descrição detalhada
+
+### Relação de Composição
+- Uma **Library** (biblioteca) contém múltiplos **Books** (livros).
+- Se a **Library** for destruída, todos os **Books** pertencentes a ela também serão destruídos, pois eles fazem parte da estrutura da **Library**.
+
+### Dependência Existencial
+- Um **Book** não pode existir sem uma **Library**. A criação de um **Book** requer uma **Library**, e sua destruição acontece juntamente com a destruição da **Library**.
+
+### Relação Hierárquica
+- A **Library** é a entidade pai que compõe os **Books**. Os **Books** são componentes internos da **Library** e dependem completamente dela para existirem.
+
 
 Criado por _Gabriel André._
