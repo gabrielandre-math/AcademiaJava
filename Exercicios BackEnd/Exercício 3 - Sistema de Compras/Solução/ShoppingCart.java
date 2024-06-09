@@ -35,7 +35,7 @@ public class ShoppingCart {
         }
     }
     public void messageCart() {
-        System.out.println("Nenhum produto cadastrado no carrinho");
+        System.out.println("Nenhum produto cadastrado ao carrinho");
     }
     public void listProductsInCart() {
         int i = 0;
@@ -57,12 +57,30 @@ public class ShoppingCart {
         }
         return totalPrice;
     }
+    public int isVoid() {
+        int k = 0;
+        for (Product product : products) {
+            k++;
+        }
+        return k;
+    }
+    public Product removeProductByName(String name) {
+        for (Product product : products) {
+            if (product.getName().equals(name)) {
+                products.remove(product);
+                return product;
+            }
+        }
+        System.out.println("O produto não existe!");
+        return null;
 
+    }
     public void initialScreen() {
-        System.out.println("Digite a opção: ");
+        System.out.println(" ---> Carrinho de produtos <---");
         System.out.println("[ 1 ] - Cadastrar produto");
-        System.out.println("[ 2 ] - Listar produtos cadastrados no carrinho");
-        System.out.println("[ 3 ] - Sair");
+        System.out.println("[ 2 ] - Adicionar produto ao carrinho");
+        System.out.println("[ 3 ] - Listar produtos cadastrados no carrinho");
+        System.out.println("[ 4 ] - Sair");
         System.out.print("Digite uma opção: ");
     }
 }

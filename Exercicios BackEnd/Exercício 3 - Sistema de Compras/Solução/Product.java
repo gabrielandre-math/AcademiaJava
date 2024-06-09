@@ -69,7 +69,6 @@ public class Product {
 
   }
   //Additional methods
-
   public Product addProduct() {
       Scanner sc = new Scanner(System.in);
       System.out.println("Nome: ");
