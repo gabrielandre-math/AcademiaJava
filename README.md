@@ -1,6 +1,4 @@
 ![Component 3](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/aba30a2d-1318-4115-836c-a75691970c1c)
-# Academia Java Atos
-
 Neste repositório estarei organizando minhas soluções e meu progresso da 7ª Academia Java Atos.
 
 
