@@ -29,7 +29,7 @@ Exemplo:
 No cenário da minha solução, um paciente só pode existir se estiver associado a um hospital.
 ### Resumo do Cenário de Composição
 
-No seu cenário, foi aplicada a composição entre as classes `Hospital` e `HospitalPatient`, com as seguintes características:
+No meu cenário, foi aplicada a composição entre as classes `Hospital` e `HospitalPatient`, com as seguintes características:
 
 1. **Definição do Relacionamento**:
    - Um paciente (`HospitalPatient`) só pode existir se estiver associado a um hospital (`Hospital`).
