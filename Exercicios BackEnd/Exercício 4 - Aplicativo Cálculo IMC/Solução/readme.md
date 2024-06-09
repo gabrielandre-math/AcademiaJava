@@ -23,5 +23,24 @@ Exemplo:
 ~~~
   O diagnóstico do paciente Lucas é Peso normal = IMC entre 18,50 e 24,99 kg/m²
 ~~~
+# UML Desenvolvido
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/5394fec3-efff-4f46-a5f7-15a5551f1cb7)
+## O que foi aplicado?
+No cenário da minha solução, um paciente só pode existir se estiver associado a um hospital.
+### Resumo do Cenário de Composição
+
+No seu cenário, foi aplicada a composição entre as classes `Hospital` e `HospitalPatient`, com as seguintes características:
+
+1. **Definição do Relacionamento**:
+   - Um paciente (`HospitalPatient`) só pode existir se estiver associado a um hospital (`Hospital`).
+   - A existência de `HospitalPatient` é dependente da existência de `Hospital`.
+
+2. **Estrutura das Classes**:
+   - A classe `Hospital` contém uma lista de objetos da classe `HospitalPatient`.
+   - Se um objeto `Hospital` for destruído, todos os objetos `HospitalPatient` associados a ele também serão destruídos, refletindo o relacionamento de composição.
+
+3. **Diagrama UML**:
+   - A composição é representada com um losango preenchido (preto) ao lado da classe `Hospital`.
+   - A multiplicidade é indicada como `1` para `Hospital` e `0..*` para `HospitalPatient`, mostrando que um hospital pode ter muitos pacientes, mas cada paciente está associado a um único hospital.
 
 Criado por _Gabriel André._
