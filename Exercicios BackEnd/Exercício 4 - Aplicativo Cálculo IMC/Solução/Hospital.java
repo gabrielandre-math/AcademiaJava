@@ -1,8 +1,6 @@
 package Solução;
-
 import java.util.ArrayList;
 import java.util.List;
-
 public class Hospital {
     List<HospitalPatient> hospitalPatients = new ArrayList<HospitalPatient>();
     List<Hospital> hospitals = new ArrayList<Hospital>();
@@ -39,7 +37,7 @@ public class Hospital {
                 System.out.println("Altura: " + hospital.getHeight());
                 System.out.println("Peso: " + hospital.getWeight());
                 System.out.println("Diagnóstico: ");
-                diagnostic(hospital.getHeight(), hospital.getWeight());
+                System.out.println(diagnostic(hospital, hospital.getHeight(), hospital.getWeight()));
             }
         }
     }
@@ -50,8 +48,8 @@ public class Hospital {
         BMI = weight / (height * height);
         return BMI;
     }
-    public String message() {
-        return "O diagnóstico do paciente " + getName() + " é ";
+    public String message(HospitalPatient hospitalPatient) {
+        return "O diagnóstico do paciente " + hospitalPatient.getName() + " é";
     }
     public String messageBMI(int controller) {
         if (controller == 1) {
@@ -75,26 +73,25 @@ public class Hospital {
         }
     }
     //Diagnostic
-    public String diagnostic(double height, double weight) {
+    public String diagnostic(HospitalPatient hospitalPatient, double height, double weight) {
         if (calculateBMI(height, weight) < 16) {
-            return message() + messageBMI(1);
+            return message(hospitalPatient) + messageBMI(1);
         } else if (calculateBMI(height, weight) >= 16 && calculateBMI(height, weight) < 17) {
-            return message() + messageBMI(2);
+            return message(hospitalPatient) + messageBMI(2);
         } else if (calculateBMI(height, weight) >= 17 && calculateBMI(height, weight) < 18.50) {
-            return message() + messageBMI(3);
+            return message(hospitalPatient) + messageBMI(3);
         } else if (calculateBMI(height, weight) >= 18.50 && calculateBMI(height, weight) < 25) {
-            return message() + messageBMI(4);
+            return message(hospitalPatient) + messageBMI(4);
         } else if (calculateBMI(height, weight) >= 25 && calculateBMI(height, weight) < 30) {
-            return message() + messageBMI(5);
+            return message(hospitalPatient) + messageBMI(5);
         } else if (calculateBMI(height, weight) >= 30 && calculateBMI(height, weight) < 35) {
-            return message() + messageBMI(6);
+            return message(hospitalPatient) + messageBMI(6);
         } else if (calculateBMI(height, weight) >= 35 && calculateBMI(height, weight) < 40) {
-            return message() + messageBMI(7);
+            return message(hospitalPatient) + messageBMI(7);
         } else {
-            return message() + messageBMI(8);
+            return message(hospitalPatient) + messageBMI(8);
         }
     }
-
     //Screen
     public void initialScreen() {
         System.out.println("--- APP DE IMC HEALTHCARE ----");

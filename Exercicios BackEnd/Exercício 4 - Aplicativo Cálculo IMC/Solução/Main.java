@@ -22,7 +22,6 @@ public class Main {
                     System.out.println("Opção inválida.");
                     break;
             }
-            sc.close();
         } while (control != 3);
     }
 }
