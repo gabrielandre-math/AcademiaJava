@@ -43,3 +43,20 @@ scanner.close();
 ### Mais informações
 [Imposto de Renda 2024 - Tabela de alíquotas e cálculo](https://g1.globo.com/economia/imposto-de-renda/noticia/2024/05/08/imposto-de-renda-2024-veja-a-tabela-de-aliquotas-e-saiba-como-fazer-o-calculo.ghtml)
 
+
+# UML Desenvolvido
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/c3932b0a-ee5c-47af-b244-ebaa5af7bbde)
+
+## O que foi aplicado?
+### Relacionamento de Database com Person
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/099be592-bb08-4836-8301-87f74c5f2b8b)
+### Composição
+Há uma relação de composição, o que implica uma dependência de Person em relação a Database. Isso significa que, se um objeto criado por Database for destruído, o objeto associado (criado por Person) também será.
+
+### Relacionamento de Person, IncomeTaxBand e IncomeTax
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/ebf989fb-d714-4a18-917b-a65ba0d4c93d)
+
+Há uma relação entre Person, IncomeTaxBand e IncomeTax. Essa conexão significa que uma Person está associada a uma IncomeTaxBand específica e ao cálculo do IncomeTax.
+
+
+Criado por _Gabriel André._
