@@ -45,16 +45,19 @@ scanner.close();
 
 
 # UML Desenvolvido
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/c3932b0a-ee5c-47af-b244-ebaa5af7bbde)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/3882fa8f-3fad-4f72-b090-504067c026b5)
+
 
 ## O que foi aplicado?
 ### Relacionamento de Database com Person
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/099be592-bb08-4836-8301-87f74c5f2b8b)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/966d73c3-1639-41cc-9751-9b1b2e307368)
+
 ### Composição
 Há uma relação de composição, o que implica uma dependência de Person em relação a Database. Isso significa que, se um objeto criado por Database for destruído, o objeto associado (criado por Person) também será.
 
 ### Relacionamento de Person, IncomeTaxBand e IncomeTax
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/ebf989fb-d714-4a18-917b-a65ba0d4c93d)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/35bd342d-14fd-4221-b2dd-1ce787a31150)
+
 
 Há uma relação entre Person, IncomeTaxBand e IncomeTax. Essa conexão significa que uma Person está associada a uma IncomeTaxBand específica e ao cálculo do IncomeTax.
 
