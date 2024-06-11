@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Library {
-    protected String name;
+    private String name;
     List<Book> books = new ArrayList<Book>();
 
     //Constructor
@@ -16,6 +16,9 @@ public class Library {
         return name;
     }
     public void setName(String name) {
+        if (name == null || name.isEmpty() || !name.matches("[A-Za-z ]+")) {
+            throw new IllegalArgumentException("O nome deve conter apenas letras de A-Z, a-z e não pode ser vazio!");
+        }
         this.name = name;
     }
     //Additional methods
@@ -33,6 +36,7 @@ public class Library {
                 System.out.println("Livro número " + i);
                 System.out.println("___________________________________");
                 System.out.println("Título: " + book.getTitle() + " \nAutor: " + book.getAuthor());
+                System.out.println("Ano de publicação: " + book.getYearPublication());
                 System.out.println("___________________________________");
             }
         }
