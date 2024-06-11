@@ -21,7 +21,8 @@ Implemente um programa principal (classe Solução.Main) que:
 
 ________________________
 # UML Desenvolvido
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/d3ea2988-03da-4eb6-9a66-d3b1c8c4513e)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/14bf6534-12a1-47eb-b496-1e546739ab16)
+
 
 
 
