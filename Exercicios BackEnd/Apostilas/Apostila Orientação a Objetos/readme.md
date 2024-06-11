@@ -1,6 +1,6 @@
 # Exercícios
 - [Exercício 1 - Classes e Atributos](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Exerc%C3%ADcio%201%20-%20Classes%20e%20Atributos)
-- [Exercício 2]()
+- [Exercício 2 - Classes e Atributos](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Exerc%C3%ADcio%202%20-%20Classes%20e%20Atributos)
 - [Exercício 3]()
 - [Exercício 4]()
 - [Exercício 5]()
