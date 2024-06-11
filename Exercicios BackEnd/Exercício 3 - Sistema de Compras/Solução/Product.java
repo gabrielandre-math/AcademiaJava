@@ -3,10 +3,10 @@ package Solução;
 import java.util.Scanner;
 
 public class Product {
-  protected String name;
-  protected double price;
-  protected int quantityProducts = 0;
-  protected double subTotal = 0;
+  private String name;
+  private double price;
+  private int quantityProducts = 0;
+  private double subTotal = 0;
   //Constructor
   public Product(){};
   public Product(String name, double price, int quantityProducts, double subTotal) {
@@ -43,31 +43,28 @@ public class Product {
   }
   //Setters
   public void setName(String name) {
-      this.name = name;
-  }
-  public void setPrice(double price) {
-      if (price >= 0) {
-          this.price = price;
+      if (name == null || name.trim().isEmpty() || !name.matches("[A-Za-zÀ-ÖØ-öø-ÿ ]+")) {
+          throw new IllegalArgumentException("O nome deve conter apenas letras e espaços e não pode ser vazio!");
       } else {
-          System.out.println("Não foi possivel alterar!");
+          this.name = name;
       }
+  }
+    public void setPrice(double price) {
+        if (price >= 0) {
+            this.price = price;
+        } else {
+            throw new IllegalArgumentException("O preço não pode ser negativo!");
+        }
+    }
 
-  }
-  public void setQuantityProducts(int quantityProducts) {
-      if (quantityProducts >= 0) {
-          this.quantityProducts = quantityProducts;
-      } else {
-          System.out.println("Não foi possivel alterar");
-      }
-  }
-  public void setSubTotal(double subTotal) {
-      if (subTotal >= 0) {
-          this.subTotal = subTotal;
-      } else {
-          System.out.println("Não foi possível fazer a alteração!");
-      }
+    public void setQuantityProducts(int quantityProducts) {
+        if (quantityProducts >= 0) {
+            this.quantityProducts = quantityProducts;
+        } else {
+            throw new IllegalArgumentException("A quantidade de produtos não pode ser negativa!");
+        }
+    }
 
-  }
   //Additional methods
   public Product addProduct() {
       Scanner sc = new Scanner(System.in);

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ShoppingCart {
     List<Product> products = new ArrayList<>();
-    protected double totalPrice = 0;
+    private double totalPrice = 0;
     //Construtor
     public ShoppingCart() {}
     public ShoppingCart(double totalPrice) {
@@ -15,14 +15,7 @@ public class ShoppingCart {
     public double getTotalPrice() {
         return totalPrice;
     }
-    //Setters
-    public void setTotalPrice(double totalPrice) {
-        if (totalPrice >= 0) {
-            this.totalPrice = totalPrice;
-        } else {
-            System.out.println("Erro ao efetuar o total");
-        }
-    }
+
     //Additional methods
     public void addProductIntoShoppingCart(Product product) {
         products.add(product);
@@ -76,7 +69,7 @@ public class ShoppingCart {
 
     }
     public void initialScreen() {
-        System.out.println(" ---> Carrinho de produtos <---");
+        System.out.println(" ---> Lojinha de produtos <---");
         System.out.println("[ 1 ] - Cadastrar produto");
         System.out.println("[ 2 ] - Adicionar produto ao carrinho");
         System.out.println("[ 3 ] - Listar produtos cadastrados no carrinho");
