@@ -3,8 +3,8 @@ package solução;
 import java.util.Scanner;
 
 public class Person {
-    protected String name;
-    protected double salary;
+    private String name;
+    private double salary;
     //Constructors
     public Person() {}
     public Person(String name, double salary) {
@@ -30,13 +30,16 @@ public class Person {
     }
     //Setters
     public void setName(String name) {
+        if (name == null || name.trim().isEmpty() || !name.matches("[A-Za-zÀ-ÖØ-öø-ÿ ]+")) {
+            throw new IllegalArgumentException("O nome deve conter apenas letras de A-Z a-z, espaços e não pode ser vazio!");
+        }
         this.name = name;
-    };
+    }
     public void setSalary(double salary) {
         if (salary >= 0) {
             this.salary = salary;
         } else {
-            System.out.println("Operação não permitida!");
+            throw new IllegalArgumentException("O salário não pode ser negativo!");
         }
     }
     //Additional methods
