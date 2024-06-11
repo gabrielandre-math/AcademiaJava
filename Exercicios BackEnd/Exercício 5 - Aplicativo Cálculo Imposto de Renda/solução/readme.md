@@ -59,8 +59,7 @@ Há uma relação de composição, o que implica uma dependência de Person em r
 
 ### Relacionamento de Person, IncomeTaxBand e IncomeTax
 ![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/553cbd2d-1bdb-49f4-a95e-e19aab6081bc)
-
-
+### Agregação
 
 Há uma relação entre Person, IncomeTaxBand e IncomeTax. Essa conexão significa que uma Person está associada a uma IncomeTaxBand específica e ao cálculo do IncomeTax.
 
