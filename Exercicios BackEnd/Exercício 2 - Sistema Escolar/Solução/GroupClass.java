@@ -4,8 +4,8 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class GroupClass {
-    protected String name;
-    protected String code;
+    private String name;
+    private String code;
     List<Student> students = new ArrayList<Student>();
     List<GroupClass> allClasses = new ArrayList<GroupClass>();
     //Constructors
@@ -26,15 +26,21 @@ public class GroupClass {
     }
     //Setters
     public void setCode(String code) {
-        if (code.matches("\\d+")) {
+        if (code != null && code.matches("\\d+")) {
             this.code = code;
         } else {
-            System.out.println("Você não digitou um código!");
+            throw new IllegalArgumentException("O código deve ser um número!");
         }
     }
+
     public void setName(String name) {
-        this.name = name;
+        if (name != null && name.matches("[A-Za-z ]+")) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("O nome deve conter apenas letras e espaços!");
+        }
     }
+
     //Additional method
     public void listCollectionClassStudent() {
         System.out.println("Alunos encontrados na turma: ");

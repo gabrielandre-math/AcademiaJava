@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class Student {
-    protected String name;
-    protected int age;
-    protected String id;
+    private String name;
+    private int age;
+    private String id;
 
     //Constructor
     public Student(){
@@ -46,22 +46,29 @@ public class Student {
 
     //Setters
     public void setName(String name) {
-        this.name = name;
+        if (name != null && name.matches("[A-Za-z ]+")) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("O nome deve conter apenas letras e espaços!");
+        }
     }
     public void setAge(int age) {
-        if (age >= 0) {
-            this.age = age;
-        } else {
-            System.out.println("Não foi possível alterar a idade!");
+        if (age <= 0) {
+            throw new IllegalArgumentException("A idade deve ser um número inteiro positivo.");
         }
+        if (age > 70) {
+            throw new IllegalArgumentException("Essa idade não é permitida para ingressar na turma.");
+        }
+        this.age = age;
     }
     public void setId(String id) {
         if (id.matches("\\d+")) {
             this.id = id;
         } else {
-            System.out.println("Você não digitou um número!");
+            throw new IllegalArgumentException("O ID deve ser um número!");
         }
     }
+
     //Additional method
     public Student addStudent() {
         Scanner sc = new Scanner(System.in);
