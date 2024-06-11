@@ -3,13 +3,13 @@
 Neste repositório estarei organizando minhas soluções e meu progresso da 7ª Academia Java Atos.
 
 
-## Exercícios de Back-End
+## Back-End
 
 - [Soluções](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exercicios%20BackEnd)
-## Exercícios de Front-End
+## Front-End
 
 
-## Exercícios de Banco de Dados
+## Banco de Dados
 - [Soluções](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exerc%C3%ADcios%20Banco%20de%20Dados)
 ## Projeto Final
 
