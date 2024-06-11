@@ -1,5 +1,6 @@
 package Solução;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class Book {
@@ -32,9 +33,15 @@ public class Book {
         return author;
     }
     //Setters
+    public void setAuthor(String author) {
+        if (author == null || author.trim().isEmpty() || !author.matches("[A-Za-zÀ-ÖØ-öø-ÿ ]+")) {
+            throw new IllegalArgumentException("O autor deve conter apenas letras de A-Z e não pode ser nulo ou vazio!");
+        }
+        this.author = author;
+    }
     public void setTitle(String title) {
-        if (title == null || title.trim().isEmpty()) {
-            throw new IllegalArgumentException("O título deve conter apenas letras de A-Z e não pode ser nulo ou vazio");
+        if (title == null || title.trim().isEmpty() || !title.matches("[A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+")) {
+            throw new IllegalArgumentException("O título deve conter apenas letras de A-Z (é permitido números também) e não pode ser nulo ou vazio");
         }
         this.title = title;
     }
@@ -42,14 +49,14 @@ public class Book {
         if (yearPublication == null || !yearPublication.matches("\\d{4}")) {
             throw new IllegalArgumentException("O ano de publicação do livro deve ser um ano válido de quatro dígitos!");
         }
+        int year = Integer.parseInt(yearPublication);
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        if (year > currentYear) {
+            throw new IllegalArgumentException("O ano de publicação do livro não pode ser no futuro!");
+        }
         this.yearPublication = yearPublication;
     }
-    public void setAuthor(String author) {
-        if (author == null || author.trim().isEmpty() || !author.matches("[A-Za-z ]+")) {
-            throw new IllegalArgumentException("O autor deve conter apenas letras de A-Z e não pode ser nulo ou vazio!");
-        }
-        this.author = author;
-    }
+
     //Additional methods
     public Book inputData() {
         Scanner sc = new Scanner(System.in);

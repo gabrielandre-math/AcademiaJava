@@ -16,8 +16,8 @@ public class Library {
         return name;
     }
     public void setName(String name) {
-        if (name == null || name.isEmpty() || !name.matches("[A-Za-z ]+")) {
-            throw new IllegalArgumentException("O nome deve conter apenas letras de A-Z, a-z e não pode ser vazio!");
+        if (name == null || name.isEmpty() || !name.matches("[A-Za-zÀ-ÖØ-öø-ÿ0-9 ]+")) {
+            throw new IllegalArgumentException("O nome deve conter apenas letras de A-Z (é permitido números também), a-z e não pode ser vazio!");
         }
         this.name = name;
     }
