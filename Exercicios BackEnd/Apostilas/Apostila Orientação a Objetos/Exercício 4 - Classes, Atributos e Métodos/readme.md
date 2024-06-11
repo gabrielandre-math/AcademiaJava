@@ -24,16 +24,124 @@ Após a criação dos objetos, utilize o método para retornar valores e exiba n
 ### Código
 **Classe LocadoraVeiculos**
 ~~~java
+import java.util.Scanner;
+
+public class LocadoraVeiculos {
+    public static void main(String[] args) {
+        Scanner leitura = new Scanner(System.in);
+        Carro carro = new Carro();
+
+        System.out.println("Insira o fabricante do veiculo: ");
+        String fabricante = leitura.nextLine();
+        System.out.println("Insira o modelo do veiculo: ");
+        String modelo = leitura.nextLine();
+        carro.atribuirValores(fabricante, modelo);
+
+        Moto moto = new Moto();
+        System.out.println("Insira a marca do veículo: ");
+        String marca = leitura.nextLine();
+        System.out.println("Insira o modelo do veiculo: ");
+        String modelo2 = leitura.nextLine();
+        System.out.println("Insira a cilindrada do veículo: ");
+        int cilindrada = leitura.nextInt();
+        moto.atribuirValores(marca, modelo2, cilindrada);
+
+        //Output
+        System.out.println(carro.exibirDados());
+        System.out.println(moto.exibirDados());
+    }
+}
 
 ~~~
 
 **Classe Carro**
 ~~~java
+public class Carro {
+    private String fabricante;
+    private String modelo;
+
+    //Constructor
+    public Carro() {}
+    public Carro(String fabricante, String modelo) {
+        this.fabricante = fabricante;
+        this.modelo = modelo;
+    }
+
+    //Getters
+    public String getFabricante() {
+        return fabricante;
+    }
+    public String getModelo() {
+        return modelo;
+    }
+
+    //Setters
+    public void setFabricante(String fabricante) {
+        this.fabricante = fabricante;
+    }
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    //Additional methods
+    public String exibirDados() {
+        return "Dados do carro: " + getFabricante() + " " + getModelo();
+    }
+    public void atribuirValores(String fabricante, String modelo) {
+        setFabricante(fabricante);
+        setModelo(modelo);
+    }
+}
 
 ~~~
 
 **Classe Moto**
 ~~~java
+public class Moto {
+    private String marca;
+    private String modelo;
+    private int cilindradas;
+
+    //Constructors
+    public Moto(String marca, String modelo, int cilindradas) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cilindradas = cilindradas;
+    }
+    public Moto() {}
+
+    //Getters
+    public String getMarca() {
+        return marca;
+    }
+    public String getModelo() {
+        return modelo;
+    }
+    public int getCilindradas() {
+        return cilindradas;
+    }
+
+    //Setters
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+    public void setCilindradas(int cilindradas) {
+        this.cilindradas = cilindradas;
+    }
+
+    //Additional methods
+    public String exibirDados() {
+        return "Dados da moto: " + getMarca() + " " + getModelo() + " " + getCilindradas();
+    }
+    public void atribuirValores(String marca, String modelo, int cilindradas) {
+        setMarca(marca);
+        setModelo(modelo);
+        setCilindradas(cilindradas);
+    }
+}
 
 ~~~
 
