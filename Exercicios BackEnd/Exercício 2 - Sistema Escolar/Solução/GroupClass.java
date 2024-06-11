@@ -24,7 +24,8 @@ public class GroupClass {
     public String getCode() {
         return code;
     }
-    //Setters
+
+    //Setters caso precise no futuro
     public void setCode(String code) {
         if (code != null && code.matches("\\d+")) {
             this.code = code;
@@ -32,7 +33,6 @@ public class GroupClass {
             throw new IllegalArgumentException("O código deve ser um número!");
         }
     }
-
     public void setName(String name) {
         if (name != null && name.matches("[A-Za-z ]+")) {
             this.name = name;
@@ -54,9 +54,6 @@ public class GroupClass {
     }
     public void addStudentintoClasse(Student student) {
         students.add(student);
-    }
-    public void addGroupClassStudent(GroupClass groupClass) {
-        allClasses.add(groupClass);
     }
     public void listClassStudent() {
         int i = 0;

@@ -46,11 +46,10 @@ public class Student {
 
     //Setters
     public void setName(String name) {
-        if (name != null && name.matches("[A-Za-z ]+")) {
-            this.name = name;
-        } else {
-            throw new IllegalArgumentException("O nome deve conter apenas letras e espaços!");
+        if (name == null || name.trim().isEmpty() || !name.matches("[A-Za-zÀ-ÖØ-öø-ÿ ]+")) {
+            throw new IllegalArgumentException("O nome deve conter apenas letras de A-Z a-z, espaços e não pode ser vazio!");
         }
+        this.name = name;
     }
     public void setAge(int age) {
         if (age <= 0) {
