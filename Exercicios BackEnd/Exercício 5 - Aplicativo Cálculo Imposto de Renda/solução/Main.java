@@ -15,7 +15,7 @@ public class Main {
             try {
                 person.initialScreen();
                 controller = sc.nextInt();
-                if (controller < 1 || controller > 4) {
+                if (controller < 1 || controller > 3) {
                     throw new EntradaInvalidaException("Entrada inválida! Digite apenas [ 1 ], [ 2 ] ou [ 3 ].");
                 }
                 switch (controller) {
