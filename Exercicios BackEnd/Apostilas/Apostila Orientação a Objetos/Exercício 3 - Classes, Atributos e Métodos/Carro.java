@@ -1,7 +1,6 @@
 public class Carro {
     private String fabricante;
     private String modelo;
-
     //Constructor
     public Carro() {}
     public Carro(String fabricante, String modelo) {
