@@ -134,6 +134,7 @@ public class MinhaClasse {
 }
 ~~~ 
 É válido ressaltar que: as classes em si só podem ser _public_ ou _default_ (sem modificador). Uma classe não pode ser _private_ ou _protected_. No entanto, classes internas (classes definidas dentro de outras classes) podem ser _private_, _protected_, _public_ ou _default_.
+
 Além disso, é importante lembrar que encapsular adequadamente os membros de uma classe (usando _private_ e fornecendo métodos _get_ e _set_ quando necessário) é uma prática recomendada em Java para manter a integridade dos dados e a segurança da classe. 
 
 Isso é conhecido como **encapsulamento**.
@@ -170,6 +171,7 @@ public class MinhaClasse {
 Neste exemplo, _meuMetodo_ é um método que não tem parâmetros e não retorna um valor. Ele simplesmente imprime uma mensagem na tela. _somar_ é um método que recebe dois parâmetros (_a_ e _b_) e retorna a soma deles. Ambos os métodos são _public_, o que significa que eles podem ser acessador de qualquer lugar.
 ## O que é um Atributo?
 Em Java, um atributo (também conhecido como **campo** ou **variável de instância**) é uma variável que é declarada dentro de uma classe, mas fora de qualquer método. Cada objeto da classe tem sua própria cópia do atributo.
+
 Os atributos são usados para representar o **estado** de um objeto. Por exemplo, se você tem uma classe _Carro_, você pode ter atributos como _cor_, _marca_ e _modelo_ para representar o estado de um carro.
 Exemplo de como os atributos são usados em Java:
 ~~~java
@@ -184,7 +186,9 @@ public class Carro {
 }
 ~~~
 Neste exemplo, _cor_, _marca_ e _modelo_ são atributos da classe _Carro_. Cada objeto _Carro_ terá sua própria _cor_, _marca_ e _modelo_.
-Os atributos podem ter diferentes **modificadores de acesso** (_public_, _private_, _protected_, _default_) que determinam onde eles podem ser acessados. É uma prática comum fazer os atributos _private_ para encapsular os dados e fornecer métodos _public_ _get_ e _set_ para acessar e modificar esses atributos. Isso é conhecido como **encapsulamento**.
+Os atributos podem ter diferentes **modificadores de acesso** (_public_, _private_, _protected_, _default_) que determinam onde eles podem ser acessados. 
+
+É uma prática comum fazer os atributos _private_ para encapsular os dados e fornecer métodos _public_ _get_ e _set_ para acessar e modificar esses atributos. Isso é conhecido como **encapsulamento**.
 Por exemplo:
 ~~~java
 public class Carro {
@@ -199,10 +203,13 @@ public class Carro {
     }
 }
 ~~~
-No exemplo acima, o atributo _cor_ é _private_, então ele só pode ser acessado dentro da classe _Carro_. No entanto, temos métodos _public_, _getCor_ e _setCor_ que permitem que outros código obtenham e definam o valor de _cor_, respectivamente. Isso permite que controlemos como _cor_ é acessado e modificado, o que pode ajudar a prevenir erros e manter a integridades dos dados.
+No exemplo acima, o atributo _cor_ é _private_, então ele só pode ser acessado dentro da classe _Carro_. No entanto, temos métodos _public_, _getCor_ e _setCor_ que permitem que outros código obtenham e definam o valor de _cor_, respectivamente. 
+
+Isso permite que controlemos como _cor_ é acessado e modificado, o que pode ajudar a prevenir erros e manter a integridades dos dados.
 
 ## O que é um Construtor?
 Em Java, um **construtor** é um bloco de código especial que é usado para inicializar um objeto. Ele é chamado quando um objeto da classe é criado usando a palavra-chave _new_.
+
 Um construtor em Java tem o mesmo nome que a classe e não tem um tipo de retorno (nem mesmo _void_). Ele pode ter zero, um ou mais parâmetros.
 Exemplo de construtor em Java:
 ~~~java
@@ -225,6 +232,7 @@ public class Main {
 ~~~
 Neste exemplo _Carro_ é o construtor da classe **Carro**. Ele recebe dois parâmetros (_cor_ e _marca_) e usa esses parâmetros para inicializar o estado do objeto _Carro_.
 Se você não fornecer um construtor para sua classe, o compilador Java criará um **construtor padrão** para você. O construtor padrão não tem parâmetros e não faz nada.
+
 É possível também ter **vários construtores** em uma classe, desde que eles tenham listas de parâmetros diferentes. 
 
 Isso é conhecido como **sobrecarga de construtores**. Por exemplo, você pode ter um construtor que não recebe parâmetros e outro que recebe dois parâmetros, como neste exemplo:
@@ -281,7 +289,9 @@ public class Main {
 }
 ~~~
 Neste exemplo, _Carro(Carro carroOriginal)_ é um cosntrutor de cópia. Ele recebe um objeto _Carro_ como parâmetro e copia os valores de _cor_ e _marca_ do objeto original para o novo objeto.
-Note que este é um exemplo simples e que a cópia de objetos pode se tornar mais complexa se os objetos tiverem atributos que são referências a outros objetos. Nesses casos, será necessário fazer uma **cópia profunda**, na qual também serão criadas cópias dos objetos referenciados, em vez de apenas copias as referências. Isso depende das necessidades específicas do código que está recebendo este tipo de técnica.
+Note que este é um exemplo simples e que a cópia de objetos pode se tornar mais complexa se os objetos tiverem atributos que são referências a outros objetos. 
+
+Nesses casos, será necessário fazer uma **cópia profunda**, na qual também serão criadas cópias dos objetos referenciados, em vez de apenas copias as referências. Isso depende das necessidades específicas do código que está recebendo este tipo de técnica.
 
 ### Exemplo de Cópia Profunda com Construtores
 Vamos considerar uma classe **Carro**, que é um objeto de outra classe **Motor**.
