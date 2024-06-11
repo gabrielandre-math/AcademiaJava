@@ -24,7 +24,8 @@ Exemplo:
   O diagnóstico do paciente Lucas é Peso normal = IMC entre 18,50 e 24,99 kg/m²
 ~~~
 # UML Desenvolvido
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/5394fec3-efff-4f46-a5f7-15a5551f1cb7)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/33001b75-64f7-4047-8f5a-6fa5c0ca1524)
+
 ## O que foi aplicado?
 Composição entre classes.
 
