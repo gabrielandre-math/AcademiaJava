@@ -3,9 +3,9 @@ package Solução;
 import java.util.Scanner;
 
 public class HospitalPatient {
-    protected String name;
-    protected double weight;
-    protected double height;
+    private String name;
+    private double weight;
+    private double height;
 
     //Constructors
     public HospitalPatient() {}
@@ -38,23 +38,25 @@ public class HospitalPatient {
 
     //Setters
     public void setName(String name) {
+        if (name == null || name.trim().isEmpty() || !name.matches("[A-Za-zÀ-ÖØ-öø-ÿ ]+")) {
+            throw new IllegalArgumentException("O nome deve conter apenas letras de A-Z a-z, espaços e não pode ser vazio!");
+        }
         this.name = name;
     }
     public void setWeight(double weight) {
         if (weight > 0) {
             this.weight = weight;
         } else {
-            System.out.println("Não foi possível alterar o peso");
+            throw new IllegalArgumentException("O peso deve ser um número positivo!");
         }
     }
     public void setHeight(double height) {
         if (height > 0) {
             this.height = height;
         } else {
-            System.out.println("Não foi possível alterar a altura");
+            throw new IllegalArgumentException("A altura deve ser um número positivo!");
         }
     }
-
     //Additional methods
     public HospitalPatient inputData() {
         Scanner sc = new Scanner(System.in);

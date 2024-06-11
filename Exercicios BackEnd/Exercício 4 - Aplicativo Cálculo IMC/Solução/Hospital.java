@@ -4,7 +4,7 @@ import java.util.List;
 public class Hospital {
     List<HospitalPatient> hospitalPatients = new ArrayList<HospitalPatient>();
     List<Hospital> hospitals = new ArrayList<Hospital>();
-    protected String name;
+    private String name;
     //Constructor
     public Hospital() {}
     public Hospital(String name){
@@ -15,17 +15,16 @@ public class Hospital {
     public String getName() {
         return name;
     }
-    //Setter
+    //Setter caso precise no futuro
     public void setName(String name) {
+        if (name == null || name.trim().isEmpty() || !name.matches("[A-Za-zÀ-ÖØ-öø-ÿ ]+")) {
+            throw new IllegalArgumentException("O nome deve conter apenas letras de A-Z a-z, espaços e não pode ser vazio!");
+        }
         this.name = name;
     }
-
     //Additional methods
     public void addHospitalPatientIntoHospital(HospitalPatient patient){
         hospitalPatients.add(patient);
-    }
-    public void addHospital(Hospital hospital){
-        hospitals.add(hospital);
     }
     public void listHospitalPatients(){
         if (hospitalPatients.isEmpty()) {
