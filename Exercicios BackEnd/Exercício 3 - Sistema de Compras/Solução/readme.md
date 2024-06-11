@@ -21,7 +21,9 @@ Implemente um programa principal (classe Solução.Main) que:
 | Total:        |                |     | R$ 120,00  |
 
 # UML Desenvolvido
-![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/115af255-7b68-4e2e-a744-4d49ac9c98fc)
+![image](https://github.com/gabrielandre-math/AcademiaJavaAtos/assets/60861872/0c452cc7-b206-4ee2-8c10-2f79cd07774a)
+
+
 
 
 ## O que foi aplicado?
