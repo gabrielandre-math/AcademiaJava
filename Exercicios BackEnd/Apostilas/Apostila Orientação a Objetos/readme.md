@@ -201,5 +201,140 @@ public class Carro {
 ~~~
 No exemplo acima, o atributo _cor_ é _private_, então ele só pode ser acessado dentro da classe _Carro_. No entanto, temos métodos _public_, _getCor_ e _setCor_ que permitem que outros código obtenham e definam o valor de _cor_, respectivamente. Isso permite que controlemos como _cor_ é acessado e modificado, o que pode ajudar a prevenir erros e manter a integridades dos dados.
 
+## O que é um Construtor?
+Em Java, um **construtor** é um bloco de código especial que é usado para inicializar um objeto. Ele é chamado quando um objeto da classe é criado usando a palavra-chave _new_.
+Um construtor em Java tem o mesmo nome que a classe e não tem um tipo de retorno (nem mesmo _void_). Ele pode ter zero, um ou mais parâmetros.
+Exemplo de construtor em Java:
+~~~java
+public class Carro {
+    String cor;
+    String marca;
+
+    // Construtor
+    public Carro(String cor, String marca) {
+        this.cor = cor;
+        this.marca = marca;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Carro meuCarro = new Carro("Vermelho", "Ferrari"); // Cria um novo objeto Carro usando o construtor
+    }
+}
+~~~
+Neste exemplo _Carro_ é o construtor da classe **Carro**. Ele recebe dois parâmetros (_cor_ e _marca_) e usa esses parâmetros para inicializar o estado do objeto _Carro_.
+Se você não fornecer um construtor para sua classe, o compilador Java criará um **construtor padrão** para você. O construtor padrão não tem parâmetros e não faz nada.
+É possível também ter **vários construtores** em uma classe, desde que eles tenham listas de parâmetros diferentes. 
+
+Isso é conhecido como **sobrecarga de construtores**. Por exemplo, você pode ter um construtor que não recebe parâmetros e outro que recebe dois parâmetros, como neste exemplo:
+~~~java
+public class Carro {
+    String cor;
+    String marca;
+
+    // Construtor sem parâmetros
+    public Carro() {
+        this.cor = "Branco";
+        this.marca = "Toyota";
+    }
+
+    // Construtor com parâmetros
+    public Carro(String cor, String marca) {
+        this.cor = cor;
+        this.marca = marca;
+    }
+}
+~~~
+Neste exemplo, se você criar um _Carro_ sem fornecer parâmetros (_new Carros()_), o construtor sem parâmetros será chamado e o carro será inicializado como um Toyota branco. Se você fornecer parâmetros (_new Carro("Vermelho", "Ferrari")_), o construtor com parâmetros será chamado e o carro será inicializado de acordo com os parâmetros fornecidos.
+
+## É possível copiar Objetos?
+Sim, é possível copiar objetos em Java usando um construtor. Isso é conhecido como um **construtor cópia**. Um construtor de cópia é um construtor que recebe um objeto da mesma classe como parâmetro e copia seus valores para o novo objeto.
+
+Exemplo de como um construtor de cópia pode ser usado em Java:
+~~~java
+public class Carro {
+    String cor;
+    String marca;
+
+    // Construtor
+    public Carro(String cor, String marca) {
+        this.cor = cor;
+        this.marca = marca;
+    }
+
+    // Construtor de cópia
+    public Carro(Carro carroOriginal) {
+        this.cor = carroOriginal.cor;
+        this.marca = carroOriginal.marca;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Carro carroOriginal = new Carro("Vermelho", "Ferrari"); // Cria um novo objeto Carro
+        Carro carroCopia = new Carro(carroOriginal); // Cria uma cópia do objeto Carro
+
+        System.out.println(carroOriginal.cor); // Imprime "Vermelho"
+        System.out.println(carroCopia.cor); // Imprime "Vermelho"
+    }
+}
+~~~
+Neste exemplo, _Carro(Carro carroOriginal)_ é um cosntrutor de cópia. Ele recebe um objeto _Carro_ como parâmetro e copia os valores de _cor_ e _marca_ do objeto original para o novo objeto.
+Note que este é um exemplo simples e que a cópia de objetos pode se tornar mais complexa se os objetos tiverem atributos que são referências a outros objetos. Nesses casos, será necessário fazer uma **cópia profunda**, na qual também serão criadas cópias dos objetos referenciados, em vez de apenas copias as referências. Isso depende das necessidades específicas do código que está recebendo este tipo de técnica.
+
+### Exemplo de Cópia Profunda com Construtores
+Vamos considerar uma classe **Carro**, que é um objeto de outra classe **Motor**.
+~~~java
+public class Motor {
+    String tipo;
+
+    // Construtor
+    public Motor(String tipo) {
+        this.tipo = tipo;
+    }
+
+    // Método para criar uma cópia profunda do Motor
+    public Motor copiaProfunda() {
+        return new Motor(this.tipo);
+    }
+}
+
+public class Carro {
+    String cor;
+    Motor motor;
+
+    // Construtor
+    public Carro(String cor, Motor motor) {
+        this.cor = cor;
+        this.motor = motor;
+    }
+
+    // Construtor de cópia (cópia profunda)
+    public Carro(Carro carroOriginal) {
+        this.cor = carroOriginal.cor;
+        this.motor = carroOriginal.motor.copiaProfunda(); // Cria uma cópia profunda do Motor
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Motor motorOriginal = new Motor("V8");
+        Carro carroOriginal = new Carro("Vermelho", motorOriginal); // Cria um novo objeto Carro
+
+        Carro carroCopia = new Carro(carroOriginal); // Cria uma cópia profunda do objeto Carro
+
+        System.out.println(carroOriginal.cor); // Imprime "Vermelho"
+        System.out.println(carroCopia.cor); // Imprime "Vermelho"
+
+        System.out.println(carroOriginal.motor.tipo); // Imprime "V8"
+        System.out.println(carroCopia.motor.tipo); // Imprime "V8"
+    }
+}
+~~~
+Neste exemplo, a classe **Motor** tem um método _copiaProfunda()_ que criar uma nova instância de **Motor** com o mesmo _tipo_. O construtor de cópia da classe **Carro** chama este método para criar uma cópia profunda do _motor_. Assim, _carroOriginal_ e _carroCopia_ têm _motor_ diferente, mas com o mesmo _tipo_. 
+
+Isso é uma cópia profunda. Se você alterar o _tipo_ do _motor_ em _carroOriginal_, isso não afetará o _motor_ em _carroCopia_, e vice-versa. Isso é diferente de uma cópia superficial, onde ambos os carros compartilhariam a mesma instância de **Motor**.
+
 
 Criado por _Gabriel André._
