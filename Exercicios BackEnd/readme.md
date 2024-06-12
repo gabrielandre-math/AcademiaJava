@@ -2,7 +2,7 @@
 Os exercícios deste repositório são referentes ao core da linguagem Java, programação Orientada a Objetos e Algoritmos.
 
 ## O que esperar das soluções?
-- Diagrama UML
+- Diagrama UML (caso precise)
 - Análise de técnicas implementadas
 - Complexidade de tempo (caso precise)
 - Esboço criativo
