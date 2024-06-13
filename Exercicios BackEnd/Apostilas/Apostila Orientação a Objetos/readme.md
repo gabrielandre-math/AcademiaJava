@@ -1,10 +1,10 @@
 # Exercícios
-- [Exercício 1 - Classes e Atributos](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Exerc%C3%ADcio%201%20-%20Classes%20e%20Atributos)
-- [Exercício 2 - Classes e Atributos](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Exerc%C3%ADcio%202%20-%20Classes%20e%20Atributos)
-- [Exercício 3 - Classes, Atributos e Métodos](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Exerc%C3%ADcio%203%20-%20Classes%2C%20Atributos%20e%20M%C3%A9todos)
-- [Exercício 4 - Classes, Atributos e Métodos](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Exerc%C3%ADcio%204%20-%20Classes%2C%20Atributos%20e%20M%C3%A9todos)
-- [Exercício 5 - Construtores](https://github.com/gabrielandre-math/AcademiaJava/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Exerc%C3%ADcio%205%20-%20Construtores)
-- [Exercício 6 - Construtores](https://github.com/gabrielandre-math/AcademiaJava/blob/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Exerc%C3%ADcio%206%20-%20Construtores/readme.md)
+- [Exercício 1 - Classes e Atributos](https://github.com/gabrielandre-math/AcademiaJava/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Todos%20os%20Exerc%C3%ADcios/Exerc%C3%ADcio%201%20-%20Classes%20e%20Atributos)
+- [Exercício 2 - Classes e Atributos](https://github.com/gabrielandre-math/AcademiaJava/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Todos%20os%20Exerc%C3%ADcios/Exerc%C3%ADcio%202%20-%20Classes%20e%20Atributos)
+- [Exercício 3 - Classes, Atributos e Métodos](https://github.com/gabrielandre-math/AcademiaJava/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Todos%20os%20Exerc%C3%ADcios/Exerc%C3%ADcio%203%20-%20Classes%2C%20Atributos%20e%20M%C3%A9todos)
+- [Exercício 4 - Classes, Atributos e Métodos](https://github.com/gabrielandre-math/AcademiaJava/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Todos%20os%20Exerc%C3%ADcios/Exerc%C3%ADcio%204%20-%20Classes%2C%20Atributos%20e%20M%C3%A9todos)
+- [Exercício 5 - Construtores](https://github.com/gabrielandre-math/AcademiaJava/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Todos%20os%20Exerc%C3%ADcios/Exerc%C3%ADcio%205%20-%20Construtores)
+- [Exercício 6 - Construtores](https://github.com/gabrielandre-math/AcademiaJava/tree/main/Exercicios%20BackEnd/Apostilas/Apostila%20Orienta%C3%A7%C3%A3o%20a%20Objetos/Todos%20os%20Exerc%C3%ADcios/Exerc%C3%ADcio%206%20-%20Construtores)
 
 # Resumo teórico de Orientação a Objetos
 
