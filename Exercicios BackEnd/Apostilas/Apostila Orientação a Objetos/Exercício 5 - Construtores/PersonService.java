@@ -32,7 +32,7 @@ public class PersonService {
         return null;
     }
     public void listData() {
-        if (person.getName() != null || person.getCity() != null) {
+        if (person.getName() != null && person.getCity() != null) {
             System.out.println(person.getName() + " " + person.getCity());
         }
         if (person2.getCity() != null) {
