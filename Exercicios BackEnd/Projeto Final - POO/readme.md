@@ -114,10 +114,10 @@ private List<Produto> itens;
   
   | Item | Quantidade | Nome       | Preço   | Subtotal | Total   |
   |------|------------|------------|---------|----------|---------|
-  | 1    | 3          | Smartphone | 2999.90 | 8997.00  |         |
+  | 1    | 3          | Smartphone | 2999.90 | 8999.70  |         |
   | 2    | 6          | T-shirt    | 89.99   | 539.94   |         |
   | 3    | 4          | Arroz      | 9.99    | 39.96    |         |
-  |      |            |            |         |          | 9576.90 |
+  |      |            |            |         |          | 9579.60 |
 
 
 Essa classe, deverá ter suas potenciais exceções tratadas.
