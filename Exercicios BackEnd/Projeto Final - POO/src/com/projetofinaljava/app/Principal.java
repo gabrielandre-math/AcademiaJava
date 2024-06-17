@@ -83,10 +83,10 @@ public class Principal {
 
         //Grava os arquivos referentes a cada carrinho de compras
         try {
-            carrinho1.gerarArquivoTexto("src/com/projetofinaljava/util/carrinho1.txt");
-            carrinho2.gerarArquivoTexto("src/com/projetofinaljava/util/carrinho2.txt");
+            carrinho1.gerarArquivoTexto("carrinho1.txt");
+            carrinho2.gerarArquivoTexto("carrinho2.txt");
             System.out.println("Arquivos de carrinho gerados com sucesso.");
-            System.out.println("Vá até o diretório: /src/com/projetofinaljava/util para visualizar os arquivos .txt");
+            System.out.println("Vá até o diretório: Projeto Final - POO/src/com/projetofinaljava para visualizar os arquivos .txt");
         } catch (IOException e) {
             System.err.println("Erro ao gravar arquivo de carrinho: " + e.getMessage());
         }
