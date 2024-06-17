@@ -3,10 +3,16 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Exercício 1 - Classes e Atributos" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Exercício 2 - Classes e Atributos" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Exercício 3 - Classes, Atributos e Métodos" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Exercício 4 - Classes, Atributos e Métodos" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Todos os Exercícios/Exercício 1 - Classes e Atributos" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Todos os Exercícios/Exercício 10 - Herança" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Todos os Exercícios/Exercício 2 - Classes e Atributos" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Todos os Exercícios/Exercício 3 - Classes, Atributos e Métodos" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Todos os Exercícios/Exercício 4 - Classes, Atributos e Métodos" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Todos os Exercícios/Exercício 5 - Construtores" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Todos os Exercícios/Exercício 6 - Construtores" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Todos os Exercícios/Exercício 7 - Herança" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Todos os Exercícios/Exercício 8 - Herança" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Apostila Orientação a Objetos/Todos os Exercícios/Exercício 9 - Herança" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
