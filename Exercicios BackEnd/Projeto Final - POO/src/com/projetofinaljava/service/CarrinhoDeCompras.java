@@ -146,4 +146,11 @@ public class CarrinhoDeCompras {
             System.err.println("Erro ao escrever arquivo: " + e.getMessage());
         }
     }
+    //Lista todos os produtos e calcula o valor total
+    public static void listarProdutosECalcularTotal(CarrinhoDeCompras carrinho, String nomeCarrinho) {
+        carrinho.listarItem();
+        double total = carrinho.calcularValorTotal();
+        System.out.printf("Total do %s: %.2f\n", nomeCarrinho, total);
+        System.out.println("");
+    }
 }

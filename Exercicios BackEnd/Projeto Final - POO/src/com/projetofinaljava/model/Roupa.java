@@ -37,11 +37,10 @@ public class Roupa extends ProdutoBase {
     //Métodos adicionais
     @Override
     public String exibirDetalhes() {
-        return "Nome: \n" +
-                this.getNome() + "Preco: \n" +
-                this.getPreco() + "Tamanho: \n" +
-                this.getTamanho() +
-                "Cor: \n" + this.getCor() +
-                this.getQuantidade();
+        return "Nome: " + this.getNome() +
+                "\nPreco: " + this.getPreco() +
+                "\nTamanho: " + this.getTamanho() +
+                "\nCor: " + this.getCor() +
+                "\nQuantidade: " + this.getQuantidade();
     }
 }

@@ -9,6 +9,8 @@ import com.projetofinaljava.model.Produto;
 import java.io.IOException;
 import java.util.List;
 
+import static com.projetofinaljava.service.CarrinhoDeCompras.listarProdutosECalcularTotal;
+
 public class Principal {
     public static void main(String[] args) {
 
@@ -55,10 +57,6 @@ public class Principal {
         calcaJeans.setQuantidade(1);
         carrinho2.adicionarItem(calcaJeans);
 
-        //Lista os produtos e calcula o total de ambos os carrinhos
-        listarProdutosECalcularTotal(carrinho1, "Carrinho 1");
-        listarProdutosECalcularTotal(carrinho2, "Carrinho 2");
-
         //Exporta a lista de produtos de cada carrinho
         List<Produto> produtosCarrinho1 = carrinho1.exportarListaProdutos();
         List<Produto> produtosCarrinho2 = carrinho2.exportarListaProdutos();
@@ -66,17 +64,22 @@ public class Principal {
         //Exibindo no console
         System.out.println("\nProdutos do Carrinho 1:");
         for (Produto produto : produtosCarrinho1) {
-            System.out.println(produto.getTipo());
-            System.out.println(produto.getNome() + " - " + produto.getPreco());
+            System.out.println("Tipo do produto: " + produto.getTipo());
+            System.out.println(produto.exibirDetalhes());
             System.out.println("");
         }
 
         System.out.println("\nProdutos do Carrinho 2:");
         for (Produto produto : produtosCarrinho2) {
-            System.out.println(produto.getTipo());
-            System.out.println(produto.getNome() + " - " + produto.getPreco());
+            System.out.println("Tipo do produto: " + produto.getTipo());
+            System.out.println(produto.exibirDetalhes());
             System.out.println("");
         }
+
+        //Lista os produtos e calcula o total de ambos os carrinhos
+        listarProdutosECalcularTotal(carrinho1, "Carrinho 1");
+        listarProdutosECalcularTotal(carrinho2, "Carrinho 2");
+
 
         //Grava os arquivos referentes a cada carrinho de compras
         try {
@@ -89,11 +92,5 @@ public class Principal {
         }
     }
 
-    //Lista todos os produtos e calcula o valor total
-    private static void listarProdutosECalcularTotal(CarrinhoDeCompras carrinho, String nomeCarrinho) {
-        carrinho.listarItem();
-        double total = carrinho.calcularValorTotal();
-        System.out.printf("Total do %s: %.2f\n", nomeCarrinho, total);
-        System.out.println("");
-    }
+
 }

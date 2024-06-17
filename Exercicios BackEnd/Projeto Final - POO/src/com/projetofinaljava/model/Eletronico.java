@@ -27,10 +27,10 @@ public class Eletronico extends ProdutoBase {
 
     @Override
     public String exibirDetalhes() {
-        return "Nome: \n" +
-                this.getNome() + "Preco: \n" +
-                this.getPreco() + "Quantidade: \n" +
-                this.getQuantidade() +
-                "Garantia Meses: \n" + this.getGarantiaMeses();
+        return "Nome: " + this.getNome() +
+                "\nPreco: " + this.getPreco() +
+                "\nQuantidade: " + this.getQuantidade() +
+                "\nGarantia Meses: " + this.getGarantiaMeses() +
+                "\nQuantidade: " + this.getQuantidade();
     }
 }

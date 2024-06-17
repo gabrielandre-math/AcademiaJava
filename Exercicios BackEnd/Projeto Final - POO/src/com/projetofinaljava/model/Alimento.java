@@ -27,9 +27,10 @@ public class Alimento extends ProdutoBase {
     //Métodos adicionais
     @Override
     public String exibirDetalhes() {
-        return "Nome: \n" + this.getNome() +
-                "Preco: \n" + this.getPreco() +
-                "Quantidade: \n" + this.getQuantidade() +
-                "Data de validade: \n" + this.getDataValidade();
+        return "Nome: " + this.getNome() +
+                "\nPreco: " + this.getPreco() +
+                "\nQuantidade: " + this.getQuantidade() +
+                "\nData de validade: " + this.getDataValidade() +
+                "\nQuantidade: " + this.getQuantidade();
     }
 }
