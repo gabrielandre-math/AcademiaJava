@@ -57,11 +57,11 @@ public void setGarantiaMeses(int garantiaMeses);
 ### Classe Alimento
 - Herda de (ProdutoBase)
 - **Atributos adicionais**:
-  ~~~~java
+  ~~~java
   private String dataValidade;
   ~~~
 - **Métodos**:
-  -- Construtores:
+  - Construtores:
     ~~~java
     public Alimento(String nome, double preco, String dataValidade, int qualidade);
     public Alimento();
@@ -79,7 +79,7 @@ private List<Produto> itens;
 //demais atributos para escrita de arquivo de texto
 ~~~
 **Métodos**:
--- Construtor:
+- Construtor:
   ~~~java
   public CarrinhoDeCompras();
   ~~~
@@ -104,17 +104,21 @@ private List<Produto> itens;
   public double calcularTotal();
   ~~~
   Para calcular o valor total dos produtos.
+
   > Observação: Para excluir um item da lista de produtos do carrinho, talvez seja necessário buscar pelo seu nome e quantidade, visto que não temos um identificador único para esse caso.
+
   ~~~java
   public void gerarArquivoTexto(String nomeArquivo);
   ~~~
   Esse método deverá gravar um arquivo de texto com o formato similar ao exemplo abaixo:
+  
   | Item | Quantidade | Nome       | Preço   | Subtotal | Total   |
-|------|------------|------------|---------|----------|---------|
-| 1    | 3          | Smartphone | 2999.90 | 8997.00  |         |
-| 2    | 6          | T-shirt    | 89.99   | 539.94   |         |
-| 3    | 4          | Arroz      | 9.99    | 39.96    |         |
-|      |            |            |         |          | 9576.90 |
+  |------|------------|------------|---------|----------|---------|
+  | 1    | 3          | Smartphone | 2999.90 | 8997.00  |         |
+  | 2    | 6          | T-shirt    | 89.99   | 539.94   |         |
+  | 3    | 4          | Arroz      | 9.99    | 39.96    |         |
+  |      |            |            |         |          | 9576.90 |
+
 
 Essa classe, deverá ter suas potenciais exceções tratadas.
 ### Classe Principal
