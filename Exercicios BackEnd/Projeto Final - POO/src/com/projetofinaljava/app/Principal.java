@@ -59,21 +59,25 @@ public class Principal {
         listarProdutosECalcularTotal(carrinho1, "Carrinho 1");
         listarProdutosECalcularTotal(carrinho2, "Carrinho 2");
 
-        // Exporta a lista de produtos de cada carrinho
+        //Exporta a lista de produtos de cada carrinho
         List<Produto> produtosCarrinho1 = carrinho1.exportarListaProdutos();
         List<Produto> produtosCarrinho2 = carrinho2.exportarListaProdutos();
 
-        //Exemplo de uso dos produtos exportados (exibindo no console)
+        //Exibindo no console
         System.out.println("\nProdutos do Carrinho 1:");
         for (Produto produto : produtosCarrinho1) {
+            System.out.println(produto.getTipo());
             System.out.println(produto.getNome() + " - " + produto.getPreco());
+            System.out.println("");
         }
-        System.out.println("");
+
         System.out.println("\nProdutos do Carrinho 2:");
         for (Produto produto : produtosCarrinho2) {
+            System.out.println(produto.getTipo());
             System.out.println(produto.getNome() + " - " + produto.getPreco());
+            System.out.println("");
         }
-        System.out.println("");
+
         //Grava os arquivos referentes a cada carrinho de compras
         try {
             carrinho1.gerarArquivoTexto("src/com/projetofinaljava/util/carrinho1.txt");
@@ -85,7 +89,7 @@ public class Principal {
         }
     }
 
-    //Método listarProdutosECalcularTotal foi mantido conforme seu código original, presumindo sua implementação correta.
+    //Lista todos os produtos e calcula o valor total
     private static void listarProdutosECalcularTotal(CarrinhoDeCompras carrinho, String nomeCarrinho) {
         carrinho.listarItem();
         double total = carrinho.calcularValorTotal();

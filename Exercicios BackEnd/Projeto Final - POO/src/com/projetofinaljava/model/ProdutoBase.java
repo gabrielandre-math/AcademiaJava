@@ -24,35 +24,30 @@ public abstract class ProdutoBase implements Produto {
     public String getNome() {
         return nome;
     }
-
     public double getPreco() {
         return preco;
     }
-
     public int getQuantidade() {
         return quantidade;
     }
 
     // Setters
     public void setNome(String nome) {
-
         this.nome = verificarCampoTexto(nome);
     }
-
     public void setPreco(double preco) {
         this.preco = verificarCampoDouble(preco);
     }
-
     public void setQuantidade(int quantidade) {
 
         this.quantidade = verificarCampoInt(quantidade);
     }
 
-    // Métodos abstratos
+    //Métodos abstratos
     public abstract String exibirDetalhes();
-
     public abstract String getTipo();
 
+    //Métodos adicionais
     public String verificarCampoTexto(String campo) {
         if (campo == null || campo.trim().isEmpty() || !campo.matches("[A-Za-zÀ-ÖØ-öø-ÿ ]+")) {
             throw new IllegalArgumentException("O campo deve conter apenas letras de A-Z ou a-z, espaços e não pode ser vazio!");

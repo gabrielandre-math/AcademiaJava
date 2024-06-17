@@ -25,6 +25,7 @@ public class CarrinhoDeCompras {
     public double getTotalValor() {
         return totalValor;
     }
+
     //Métodos Setters
     public void setTotalValor(double totalValor) {
         if (totalValor < 0) {
@@ -32,7 +33,6 @@ public class CarrinhoDeCompras {
         }
         this.totalValor = totalValor;
     }
-
 
     //Métodos
     public void adicionarItem(Produto produto) {
@@ -58,7 +58,7 @@ public class CarrinhoDeCompras {
             System.out.println("O produto " + produto.getNome() + " não existe no carrinho!");
         }
     }
-
+    //Lista os itens de modo formatado, da mesma forma que é gravado no arquivo .txt
     public void listarItem() {
         if (this.produtoList.isEmpty()) {
             System.out.println("Carrinho vazio.");
@@ -86,13 +86,7 @@ public class CarrinhoDeCompras {
             }
         }
     }
-
-    public static void listarProdutosECalcularTotal(CarrinhoDeCompras carrinho, String nomeCarrinho) {
-        System.out.println("Produtos do " + nomeCarrinho + ":");
-        carrinho.listarItem();
-        System.out.printf("Total do %s: R$ %.2f%n", nomeCarrinho, carrinho.calcularValorTotal());
-        System.out.println();
-    }
+    //Exporta os itens do carrinho
     public List<Produto> exportarListaProdutos() {
         return this.produtoList;
     }
