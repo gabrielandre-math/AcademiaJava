@@ -316,10 +316,10 @@ public class Motor {
 
 public class Carro {
     String cor;
-    Motor motor;
+    Motor Motor;
 
     // Construtor
-    public Carro(String cor, Motor motor) {
+    public Carro(String cor, Motor Motor) {
         this.cor = cor;
         this.motor = motor;
     }
@@ -327,7 +327,7 @@ public class Carro {
     // Construtor de cópia (cópia profunda)
     public Carro(Carro carroOriginal) {
         this.cor = carroOriginal.cor;
-        this.motor = carroOriginal.motor.copiaProfunda(); // Cria uma cópia profunda do Motor
+        this.motor = carroOriginal.motor.copiaProfunda(); // Cria uma cópia profunda do motor
     }
 }
 
@@ -350,5 +350,105 @@ Neste exemplo, a classe **Motor** tem um método _copiaProfunda()_ que criar uma
 
 Isso é uma cópia profunda. Se você alterar o _tipo_ do _motor_ em _carroOriginal_, isso não afetará o _motor_ em _carroCopia_, e vice-versa. Isso é diferente de uma cópia superficial, onde ambos os carros compartilhariam a mesma instância de **Motor**.
 
+## O que é uma Classe Abstrata?
+Em Java, uma **classe abstrata** é uma superclasse que não pode criar objetos por conta própria e é projetada para ser herdada por subclasses que implementam ou complementam os métodos abstratos.
+Pontos-chave sobre classes abstratas:
+- **Métodos Abstratos**: Uma classe abstrata pode ter métodos abstratos, que são declarados sem uma implementação (sem corpo). Subclasses concretas são obrigadas a implementar esses métodos.
+- **Métodos concretos**: Também podem conter métodos concretos (com implementação). Isso permite reutilizar o código comum às subclasses.
+- **Construtores**: Embora não possam ser instanciadas, classes abstratas podem ter construtores que são chamados quando uma instância de uma subclasse concreta é criada.
+- **Variáveis de Membro**: Podem ter variáveis de membro que podem ser herdados pelas subclasses.
+
+  
+Exemplo:
+~~~java
+abstract class Animal {
+    protected int idade;
+
+    public Animal(int idade) {
+        this.idade = idade;
+    }
+
+    public abstract void emitirSom();
+
+    public void dormir() {
+        System.out.println("Zzz");
+    }
+}
+
+class Cachorro extends Animal {
+
+    public Cachorro(int idade) {
+        super(idade);
+    }
+
+    @Override
+    public void emitirSom() {
+        System.out.println("Au au");
+    }
+}
+~~~
+Neste exemplo, **Animal** é uma classe abstrata com um método abstrato _emitirSom()_ é um método concreto _dormir()_. A classe **Cachorro** é uma subclasse concreta que implementa o método abstrato _emitirSom()_.
+### Quando são úteis?
+Classes abstratas são úteis quando você tem uma base comum de características e comportamentos para um grupo de classes relacionadas, mas nunca espera criar objetos da classe base diretamente. Elas são uma forma de forçar um contrato para as subclasses, garantindo que certos métodos sejam implementados.
+
+## O que são Interfaces?
+Em Java, uma **interface** é um tipo de referência similar a uma classe, que pode conter apenas constantes, métodos de assinatura, métodos default, métodos estáticos e métodos privados. Ela é usada para definir um contrato que as classes que a implementam devem seguir.
+Pontos-chave sobre interfaces:
+- **Métodos Abstratos**: Todos os métodos em uma interface são implicitamente abstratos, exceto os métodos default e estáticos.
+- **Implementação Múltipla**: Uma classe em Java pode implementar múltiplas interfaces, permitindo a herança múltipla de tipo.
+- **Public e Abstract**: Todos os métodos de uma interface são implicitamente públicos e abstratos (exceto os métodos default e estáticos).
+- **Constantes**: Todos os campos em interfaces são public, static e final por padrão, ou seja, são constantes.
+Um exemplo de interface seria:
+~~~java
+public interface Animal {
+    int IDADE_MAXIMA = 100; // constante
+
+    void emitirSom(); // método abstrato
+
+    default void respirar() {
+        System.out.println("Respirando normalmente");
+    }
+}
+
+public class Cachorro implements Animal {
+
+    @Override
+    public void emitirSom() {
+        System.out.println("Au au");
+    }
+}
+~~~
+Neste exemplo, **Animal** é uma interface com um campo constante _IDADE_MAXIMA_, um método abstrato _emitirSom()_ e um método default _respirar()_. A classe **Cachorro** implementa a interface **Animal** e fornece a implementação do método abstrato _emitirSom()_.
+
+### Quando são úteis?
+Interfaces são úteis quando você quer garantir que diferentes classes sigam um mesmo padrão ou contrato de comportamento, sem se preocupar com a estrutura interna ou estado dessas classes. Elas são especialmente úteis em situações onde várias classes podem compartilhar o mesmo comportamento, mas não necessariamente têm uma relação de pai-filho.
+
+## Exceções em Java
+Em Java, uma **Exceção** é um evento que ocorre durante a execução de um programa e que interrompe o fluxo normal das instruções. É um objeto que é lançado (ou "thrown") em um ponto do código onde ocorreu um problema e capturado (ou  "caught") em outro ponto para ser tratado.
+
+Pontos-chave sobre exceções:
+- **Hierarquia de Exceções**: Em Java, todas as exceções são subclasses de **Throwable**. A classe **Exception** é uma subclasse de **Throwable** que é usada para condições excepcionais que um programa deve capturar.
+- **Checked e Unchecked**: Exceç~eos em Java são categorizadas como checked (verificadas) ou unchecked (não verificadas). Exceções checked são aquelas que o compilador exige que sejam tratas ou declaradas no código. Exceções unchecked são aquelas que o compilador não exige que sejam tratadas ou declaradas.
+- **Try-Catch**: Para capturar e tratar exceções, usamos blocos **try-catch**. O bloco **try** contém o código que pode lançar uma exceção, e o bloco **catch** contém o código para trata a exceção.
+- **Finally**: O bloco **finally** é opcional e contém o código que é executado após o bloco **try-catch**, independentemente de uma exceção ter sido lançada ou não.
+  
+Um exemplo simples seria:
+~~~java
+public class TesteExcecao {
+    public static void main(String[] args) {
+        try {
+            int divisao = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Erro de divisão por zero!");
+        } finally {
+            System.out.println("Esta linha é sempre executada.");
+        }
+    }
+}
+~~~
+Neste exemplo, tentamos dividir um número por zero, o que lança uma _ArithmeticException_. O erro é capturado no bloco **catch**, onde tratamos a exceção imprimindo uma mensagem. O bloco **finally** é executado após o tratamento da exceção, independentemente do resultado.
+
+### Por que usar isso?
+Exceções são fundamentais para o manejo de erros em Java, permitindo que os programas se recuperem de condições anormais sem falhar completamente.
 
 Criado por _Gabriel André._
