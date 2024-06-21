@@ -36,7 +36,7 @@ create table Dinossauro (
     fk_era integer,
     fk_descobridor integer,
     foreign key(fk_grupo) references Grupo(id),
-    foreign key(fk_era) references era(id),
+    foreign key(fk_era) references Era(id),
     foreign key(fk_descobridor) references Descobridor(id)
 );
 ~~~
