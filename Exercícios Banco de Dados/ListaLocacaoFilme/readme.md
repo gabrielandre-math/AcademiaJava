@@ -1,4 +1,6 @@
 # Lista de Exercício da Locação de Filme
+![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/379edada-3877-4f48-8e7e-eb87125efcd8)
+
 1. Listar todos os filmes alugados por um cliente específico, incluindo a data de locação e a data de devolução.
 2. Obter uma lista de clientes e seus dependentes.
 3. Listar todos os filmes de um determinado gênero.
