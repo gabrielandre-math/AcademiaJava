@@ -14,6 +14,9 @@ Os exercícios deste repositório são referentes à disciplina de Banco de Dado
 - [Exercício 3](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exerc%C3%ADcios%20Banco%20de%20Dados/Exerc%C3%ADcios%20de%20sala%20de%20aula/Exerc%C3%ADcio%203)
 - [Exercício 4](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exerc%C3%ADcios%20Banco%20de%20Dados/Exerc%C3%ADcios%20de%20sala%20de%20aula/Exerc%C3%ADcio%204)
 
+### Lista
+- [Exercício de Locação de Filme]()
+
 
 Criado por _Gabriel André de Lima Silva._
 
