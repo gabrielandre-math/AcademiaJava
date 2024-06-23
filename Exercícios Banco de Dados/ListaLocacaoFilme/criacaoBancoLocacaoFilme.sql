@@ -7,7 +7,7 @@ CREATE TABLE Endereco (
   tipo_log    VARCHAR(40),
   complemento VARCHAR(40),
   cidade      VARCHAR(40),
-  uf          CHAR(1),
+  uf          CHAR(2),
   cep         CHAR(8),
   numero      VARCHAR(10),
   bairro      VARCHAR(60),
