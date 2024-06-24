@@ -36,10 +36,10 @@ CREATE TABLE Ator (
 );
 -- Tabela Filmes
 CREATE TABLE Filme (
-    titulo_original     VARCHAR(100),
-    titulo              VARCHAR(100),
-    quantidade          INTEGER,
-    cod_filme           SERIAL PRIMARY KEY NOT NULL,
+    titulo_original  VARCHAR(100),
+    titulo           VARCHAR(100),
+    quantidade       INTEGER,
+    cod_filme        SERIAL PRIMARY KEY NOT NULL,
     fk_cod_cat          INTEGER NOT NULL,
     fk_cod_gen          INTEGER NOT NULL,
     FOREIGN KEY (fk_cod_cat) REFERENCES Categoria(cod_cat),
@@ -47,8 +47,8 @@ CREATE TABLE Filme (
 );
 -- Tabela Filme_Ator
 CREATE TABLE FilmeAtor (
-    ator           CHAR(1),
-    diretor        CHAR(1),
+    ator        CHAR(1),
+    diretor     CHAR(1),
     fk_cod_ator    INTEGER NOT NULL,
     fk_cod_filme   INTEGER NOT NULL,
     FOREIGN KEY (fk_cod_ator)  REFERENCES Ator(cod_ator),
@@ -65,7 +65,7 @@ CREATE TABLE Cliente (
 );
 -- Tabela Dependente
 CREATE TABLE Dependente (
-    parentesco         VARCHAR(20),
+    parentesco      VARCHAR(20),
     fk_cod_cli         INTEGER NOT NULL,
     fk_cod_dep         INTEGER NOT NULL,
     PRIMARY KEY (fk_cod_cli, fk_cod_dep),
