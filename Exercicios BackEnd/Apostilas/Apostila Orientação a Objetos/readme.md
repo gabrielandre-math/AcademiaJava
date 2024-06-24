@@ -12,7 +12,7 @@
 # Resumo teórico de Orientação a Objetos
 
 ## O que é uma classe?
-Em Java, uma classe é um modelo ou um plano para criar objetos. Uma classe define o estado e o comportamento que os objetos do tipo da classe terão. Um estado é representado por atributos (variáveis) e comportamento é representado por métodos (funções). Por exemplo, uma classe Carro pode ter atributos como marca, modelo e cor, e métodos como _acelerar()_ e _frear()_. Você gostaria de um exemplo de código?
+Em Java, uma classe é um modelo ou um plano para criar objetos. Uma classe define o estado e o comportamento que os objetos do tipo da classe terão. Um estado é representado por atributos (variáveis) e comportamento é representado por métodos (funções). Por exemplo, uma classe Carro pode ter atributos como marca, modelo e cor, e métodos como _acelerar()_ e _frear()_. 
 
 ## O que é um objeto?
 Em Java, um objeto é uma instância de uma classe. Pode ser criado usando a palavra _new_ seguida pelo nome da classe e parênteses. 
