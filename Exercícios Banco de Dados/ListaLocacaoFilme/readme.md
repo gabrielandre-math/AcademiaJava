@@ -34,6 +34,7 @@ WHERE
     l.fk_cod_cli = 9;
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/62b291a8-9e70-49f3-99f3-80e2c9d91023)
 
 
@@ -71,6 +72,7 @@ JOIN Profissao p ON c.fk_cod_prof = p.cod_prof
 WHERE p.nome = 'Engenheiro Civil';
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/ae54bfa9-d7e0-465d-8f02-2207e6de9a53)
 
 
@@ -95,6 +97,7 @@ JOIN Filme f ON fa.fk_cod_filme = f.cod_filme
 WHERE f.titulo = 'A Origem';
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/6a817607-3f0e-4d15-8a1d-46666d55e0d4)
 
 ### 7. Obter o endereço completo de um cliente específico.
@@ -106,6 +109,7 @@ JOIN Endereco e ON ce.fk_cod_end = e.cod_end
 WHERE c.cod_cli = 5;
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/0d7befe1-0618-426a-beb3-419f9271c2f6)
 
 ### 8. Listar todos os filmes e seus respectivos gêneros e categorias.
@@ -122,6 +126,7 @@ FROM
     INNER JOIN Categoria c ON f.fk_cod_cat = c.cod_cat;
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/9ca05835-8452-42ce-bb25-5c8cc3635085)
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/09893756-d28e-49c0-806e-44d28349ba6a)
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/c337ed87-d414-4b92-b3ae-e4df8a4eecfb)
@@ -143,6 +148,7 @@ WHERE
     f.titulo_original = 'The Dark Knight';
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/46835df4-644b-43c5-8fb9-fd7880ec17d4)
 
 ### 10. Exibir a lista de clientes com multas superiores a um valor específico.
@@ -153,6 +159,7 @@ JOIN Locacao l ON c.cod_cli = l.fk_cod_cli
 WHERE l.multa > 5;
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/c54d9e0e-89e8-49c0-825c-2e1807293a62)
 
 ### 11. Listar todas as locações feitas em um período específico.
@@ -162,6 +169,7 @@ FROM Locacao
 WHERE data_loc BETWEEN '2024-06-01' AND '2024-06-08';
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/033e641f-23d0-4d59-aad8-ac2cf11492e0)
 
 ### 12. Obter a quantidade total de filmes alugados por cada cliente. (DESAFIO)
@@ -174,6 +182,7 @@ GROUP BY c.nome
 ORDER BY quantidade_filmes_alugados DESC;
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/edbef020-f0e4-4c6e-a6d3-d66af1af1be5)
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/db16e898-ecd9-4a94-b633-5dd21cb8e878)
 
@@ -187,6 +196,7 @@ JOIN Filme f ON lf.fk_cod_film = f.cod_filme
 ORDER BY lf.data_devol;
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/e8f94a09-72f9-46f1-810b-4737bfcaebb2)
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/bdde1ce9-0fbe-4b25-93f7-2b9f10bd72e7)
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/95cf9a6a-1a95-473a-ac77-e9baa51d2910)
@@ -206,6 +216,7 @@ WHERE e.cidade = 'São Paulo'
 AND cat.nome = 'Ação';
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/9a0e365d-92e8-4c0e-8f1c-62ad0406be1f)
 
 
@@ -219,6 +230,7 @@ HAVING COUNT(FA.fk_cod_filme) >= 5
 ORDER BY num_filmes DESC;
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/2e6533dc-0f07-46fb-b2da-efbed186be5d)
 
 ### 16. Exibir a quantidade total de filmes alugados por categoria e gênero, incluindo apenas as categorias e gêneros que têm mais de 50 filmes alugados no total (DESAFIO)
@@ -239,6 +251,7 @@ HAVING
     COUNT(lf.fk_cod_film) > 50;
 ~~~
 **Saída**:
+
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/865fe105-e1f0-48a3-9e54-93e96f4198f1)
 
 
