@@ -7,7 +7,7 @@ Este repositório contém os arquivos HTML do site AgencyG, uma agência de dese
 ### Index
 `index.html`
 ![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/0e90aab3-5361-4c60-8a14-f6f4384bde28)
-![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/386158c6-1e1e-4db1-adcf-13d2d3916723)
+![image](https://github.com/gabrielandre-math/AcademiaJava/assets/60861872/fbaa819e-f51e-4ace-b7ec-d43b7e0a1f77)
 
 A página inicial do site. Contém uma seção de heróis, indicativos de crescimento e diferenciais da agência. Inclui um botão de call-to-action para solicitar uma demonstração.
 
