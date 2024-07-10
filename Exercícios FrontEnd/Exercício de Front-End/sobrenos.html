@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgencyG</title>
+    <style>
+        img {
+            width: 40%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #222;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        header h1 {
+            color: #E91E63;
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+        }
+        nav a:hover {
+            color: #E91E63;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #333;
+            border: 1px solid #444;
+            border-radius: 5px;
+            width: 150px;
+            z-index: 1000; /* Garantir que o menu esteja acima de outros elementos */
+        }
+        .menu.show {
+            display: flex;
+        }
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: #333;
+            border-bottom: 1px solid #444;
+        }
+        .menu a:hover {
+            background-color: #444;
+        }
+        .menu-btn {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #E91E63;
+        }
+        .content {
+            padding: 20px;
+        }
+        .about-section, .mission-section, .differentiators-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+        .show {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        .about-section {
+            margin-bottom: 40px;
+        }
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-content div {
+            max-width: 600px;
+            position: relative;
+        }
+        .about-section img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .about-section p, .mission-section p, .differentiator {
+            background-color: rgba(217, 217, 217, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .about-section p::before, .about-section p::after, .mission-section p::before, .mission-section p::after, .differentiator::before, .differentiator::after {
+            content: '';
+            position: absolute;
+            width: 134px;
+            height: 124px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="634" height="624" viewBox="0 0 634 624" fill="none"><g filter="url(%23filter0_f_1_120)"><ellipse cx="317" cy="312" rx="67" ry="62" fill="%23FF9807" fill-opacity="0.8"/></g><defs><filter id="filter0_f_1_120" x="0" y="0" width="634" height="624" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="125" result="effect1_foregroundBlur_1_120"/></filter></defs></svg>') no-repeat center center;
+            background-size: cover;
+            filter: blur(125px);
+        }
+        .about-section p::before, .mission-section p::before, .differentiator::before {
+            bottom: 0;
+            left: 0;
+        }
+        .about-section p::after, .mission-section p::after, .differentiator::after {
+            top: 0;
+            right: 0;
+        }
+        .mission-section {
+            text-align: center;
+        }
+        .mission-section p {
+            display: inline-block;
+            text-align: left;
+        }
+        .differentiators-section {
+            text-align: center;
+            margin: auto;
+        }
+        .differentiators-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .differentiators-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .differentiator {
+            width: 45%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            color: #fff; /* Garantir que o texto dentro dos cartões seja branco */
+        }
+        .differentiator.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .differentiator h3 {
+            margin-top: 0;
+        }
+        .highlight-red h3 {
+            color: #E91E63;
+        }
+        .highlight-orange h3 {
+            color: #FFA500;
+        }
+        .highlight-purple h3 {
+            color: #800080;
+        }
+        .highlight-yellow h3 {
+            color: #FFD700;
+        }
+        .side-text {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        .side-text p {
+            margin: 10px 0;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .side-text.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        footer {
+            background-color: #222;
+            padding: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        footer.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        footer div {
+            margin: 10px;
+            flex: 1 1 200px;
+        }
+        footer a {
+            color: #E91E63;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            img {
+                width: 100%;
+            }
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+            nav {
+                display: none;
+            }
+            .menu-btn {
+                display: block;
+                align-self: center;
+            }
+            .menu {
+                width: auto;
+            }
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .differentiator {
+                width: 80%;
+                margin: auto;
+            }
+            .footer-content {
+                text-align: center;
+                align-items: center;
+            }
+            footer div {
+                flex: 1 1 100%;
+            }
+        }
+        a {text-decoration: none;}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.querySelector('.menu-btn');
+            const menu = document.querySelector('.menu');
+
+            menuBtn.addEventListener('click', function () {
+                menu.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+                    menu.class
+                    List.toggle('show');
+                }
+            });
+
+            function checkScroll() {
+                document.querySelectorAll('.about-section, .mission-section, .differentiators-section, .side-text, footer').forEach(function(element) {
+                    if (element.getBoundingClientRect().top < window.innerHeight - 50) {
+                        element.classList.add('show');
+                    }
+                });
+                document.querySelectorAll('.differentiator').forEach(function(element) {
+                    if (element.getBoundingClientRect().top < window.innerHeight - 50) {
+                        element.classList.add('show');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Trigger the check on page load
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html"><h1>AgencyG</h1></a>
+            <nav>
+                <a href="sobrenos.html">Sobre nós</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+            <div class="menu-btn">☰</div>
+            <div class="menu">
+                <a href="sobrenos.html">Sobre nós</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </div>
+    </header>
+    <div class="container content">
+        <section class="about-section">
+            <h2>Sobre nós</h2>
+            <div class="about-content">
+                <div>
+                    <p>Bem-vindo à AgencyG, onde glamour encontra inovação e estilo se mistura com a tecnologia. Somos uma agência de desenvolvimento especializada em criar experiências digitais únicas, sofisticadas e altamente personalizadas. Nossa paixão por design vanguardista e soluções tecnológicas de ponta nos permite transformar visões ousadas
+                        em realidades digitais deslumbrantes. Nossa equipe é composta por criativos visionários, designers talentosos e desenvolvedores habilidosos, todos dedicados a entregar projetos que não apenas atendem às expectativas, mas as superam. Cada site que criamos é uma obra-prima, cuidadosamente elaborada para refletir a essência e a identidade de nossos clientes.</p>
+                </div>
+                <img src="brooke-cagle-g1Kr4Ozfoac-unsplash.jpg" alt="Team working">
+            </div>
+        </section>
+        <section class="mission-section">
+            <h2>Nossa missão</h2>
+            <p>Nossa missão é elevar a presença online de nossos clientes através de designs exclusivos e funcionalidade impecável. Acreditamos que um site deve ser mais do que apenas uma presença digital – deve ser uma experiência envolvente e memorável. Estamos comprometidos em criar soluções que não apenas impressionem visualmente, mas que também ofereçam uma navegação intuitiva e uma performance excepcional.</p>
+        </section>
+        
+    </div>
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>AgencyG</h3>
+                <p>Contate-nos:</p>
+                <p>+55 9999-9999</p>
+                <p>agencyg@email.com</p>
+                <p>Brazil, Rio de Janeiro - RJ</p>
+            </div>
+            <div>
+                <h3>Companhia</h3>
+                <a href="sobrenos.html">Sobre nós</a>
+                <a href="#">Sustentabilidade</a>
+                <a href="#">Carreiras</a>
+            </div>
+            <div>
+                <h3>Mídias sociais</h3>
+                <a href="#">LinkedIn</a>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
