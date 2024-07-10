@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgencyG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #222;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        header h1 {
+            color: #E91E63;
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+        }
+        nav a:hover {
+            color: #E91E63;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #333;
+            border: 1px solid #444;
+            border-radius: 5px;
+            width: 150px;
+            z-index: 1000; /* Garantir que o menu esteja acima de outros elementos */
+        }
+        .menu.show {
+            display: flex;
+        }
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 1em;
+            text-align: left;
+            background-color: #333;
+            border-bottom: 1px solid #444;
+        }
+        .menu a:hover {
+            background-color: #444;
+        }
+        .menu-btn {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #E91E63;
+        }
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            margin: 40px 0;
+            height: 600px;
+            overflow: hidden;
+        }
+        .hero-section img {
+            width: calc(33.333% - 20px);
+            border-radius: 15px;
+            margin: 0 10px;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img {
+            width: 100%;
+            flex-shrink: 0;
+            border-radius: 15px;
+            height: auto;
+        }
+        .carousel-buttons {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .hero-text {
+            position: absolute;
+            top: 20%;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            z-index: 10;
+        }
+        .cta-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px 30px;
+            background-color: #E91E63;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            z-index: 10;
+        }
+        .cta-button:hover {
+            background-color: #c2185b;
+        }
+        .differentiators-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .differentiators-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .differentiators-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .differentiator {
+            border-radius: 10px;
+            background-color: #222;
+            padding: 30px;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            color: #fff; /* Garantir que o texto dentro dos cartões seja branco */
+        }
+        .differentiator.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .highlight-red h3 {
+            color: #E91E63;
+        }
+        .highlight-orange h3 {
+            color: #FFA500;
+        }
+        .highlight-yellow h3 {
+            color: #FFD700;
+        }
+        .highlight-purple h3 {
+            color: #800080;
+        }
+        .side-text {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .growth-indicators {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 80px 0;
+        }
+        .growth-text {
+            max-width: 60%;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .growth-table {
+            width: 80%;
+            border-collapse: collapse;
+        }
+        .growth-table th, .growth-table td {
+            border: 1px solid #222;
+            padding: 10px;
+            text-align: center;
+        }
+        .growth-table th {
+            background-color: #222;
+        }
+        footer {
+            background-color: #222;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        footer div {
+            margin: 10px;
+            flex: 1 1 200px;
+        }
+        footer a {
+            color: #E91E63;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+            nav {
+                display: none;
+            }
+            .menu-btn {
+                display: block;
+                align-self: center;
+            }
+            .hero-section {
+                display: none;
+            }
+            .carousel {
+                display: block;
+            }
+            .carousel img {
+                width: 100%;
+            }
+            .hero-text {
+                font-size: 3em;
+                top: 30%;
+            }
+            .cta-button {
+                top: 75%;
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+            .differentiators-container {
+                align-items: center;
+                flex-direction: column;
+                padding: 10px;
+            }
+            .differentiator {
+                width: 90%;
+                padding: 10px;
+            }
+            .growth-indicators {
+                align-items: center;
+            }
+            .growth-text, .growth-table {
+                max-width: 100%;
+                width: 100%;
+            }
+            .carousel .hero-text, .carousel .cta-button {
+                display: block;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html"><h1>AgencyG</h1></a>
+            <nav>
+                <a href="sobrenos.html">Sobre nós</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+            <div class="menu-btn">☰</div>
+            <div class="menu">
+                <a href="sobrenos.html">Sobre nós</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <section class="hero-section">
+            <div class="hero-text"></div>
+            <button class="cta-button">Solicite uma demonstração</button>
+            <img src="donny-jiang-oeZrm_Ea8v4-unsplash.jpg" alt="Hero Image 1">
+            <img src="justin-peralta-qRkImTcLVZU-unsplash.jpg" alt="Hero Image 2">
+            <img src="anton-maksimov-5642-su-rr-o3AahhNQ-unsplash.jpg" alt="Hero Image 3">
+        </section>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="donny-jiang-oeZrm_Ea8v4-unsplash.jpg" alt="Hero Image 1">
+                <img src="justin-peralta-qRkImTcLVZU-unsplash.jpg" alt="Hero Image 2">
+                <img src="anton-maksimov-5642-su-rr-o3AahhNQ-unsplash.jpg" alt="Hero Image 3">
+            </div>
+            <div class="hero-text">Você pensa e nós criamos</div>
+            <button class="cta-button">Solicite uma demonstração</button>
+            <div class="carousel-buttons">
+                <button class="carousel-button prev">❮</button>
+                <button class="carousel-button next">❯</button>
+            </div>
+        </div>
+        <section class="growth-indicators">
+            <div class="growth-text">
+                <h2>Indicativos de crescimento</h2>
+                <p>Tivemos um enorme salto em atendimento de diversas marcas, expandindo nossa expertise
+                    e adaptando nossas soluções para atender às necessidades específicas de cada cliente. Nossa habilidade em entender e capturar a essência de cada marca nos permitiu criar experiências digitais que não apenas atendem, mas superam as expectativas. Este crescimento reflete nosso compromisso com a excelência e nossa capacidade de inovar continuamente, entregando resultados que destacam nossos clientes no mercado. Cada projeto que assumimos é uma oportunidade para redefinir padrões e elevar o nível de sofisticação e estilo na web.</p>
+            </div>
+            <table class="growth-table">
+                <thead>
+                    <tr>
+                        <th>Ano</th>
+                        <th>Crescimento em %</th>
+                        <th>Qtd marcas atendidas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023</td>
+                        <td>35</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>2024</td>
+                        <td>70</td>
+                        <td>56</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="differentiators-section">
+            <h2>O Que Nos Diferencia</h2>
+            <div class="differentiators-container">
+                <div class="differentiator highlight-red">
+                    <h3>Design exclusivo</h3>
+                    <p>Criamos layouts únicos e personalizados que destacam a singularidade de cada marca.</p>
+                </div>
+                <div class="differentiator highlight-orange">
+                    <h3>Atendimento Personalizado</h3>
+                    <p>Valorizamos cada cliente como único e trabalhamos em estreita colaboração para garantir que suas necessidades e desejos sejam plenamente atendidos.</p>
+                </div>
+                <div class="differentiator highlight-yellow">
+                    <h3>Tecnologia de Ponta</h3>
+                    <p>Utilizamos as tecnologias mais avançadas para garantir sites rápidos, seguros e responsivos.</p>
+                </div>
+                <div class="differentiator highlight-purple">
+                    <h3>Experiência e muita Paixão</h3>
+                    <p>Com anos de experiência e uma paixão inabalável por inovação, nossa equipe está pronta para enfrentar qualquer desafio.</p>
+                </div>
+            </div>
+        </section>
+        <div class="side-text">
+            <p>Mais do que desenvolvimento, criamos experiências.</p>
+            <p>Experiências digitais que encantam e impressionam.</p>
+            <p>Eleve sua presença online a um novo nível de sofisticação.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>AgencyG</h3>
+                <p>Contate-nos:</p>
+                <p>+55 9999-9999</p>
+                <p>agencyg@email.com</p>
+                <p>Brazil, Rio de Janeiro - RJ</p>
+            </div>
+            <div>
+                <h3>Companhia</h3>
+                <a href="sobrenos.html">Sobre nós</a>
+                <a href="#">Sustentabilidade</a>
+                <a href="#">Carreiras</a>
+            </div>
+            <div>
+                <h3>Mídias sociais</h3>
+                <a href="#">LinkedIn</a>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            const menuBtn = $('.menu-btn');
+            const menu = $('.menu');
+
+            menuBtn.on('click', function() {
+                menu.toggleClass('show');
+            });
+
+            $(document).on('click', function(event) {
+                if (!menu.is(event.target) && !menuBtn.is(event.target) && menu.has(event.target).length === 0) {
+                    menu.removeClass('show');
+                }
+            });
+
+            $(window).on('scroll', function() {
+                $('.about-section, .mission-section, .differentiators-section, .side-text, footer').each(function() {
+                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 50) {
+                        $(this).addClass('show');
+                    }
+                });
+                $('.differentiator').each(function() {
+                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 50) {
+                        $(this).addClass('show');
+                    }
+                });
+            });
+
+            // Carousel functionality
+            const carouselImages = $('.carousel-images');
+            const images = $('.carousel img');
+            const prevButton = $('.carousel-button.prev');
+            const nextButton = $('.carousel-button.next');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                if (index < 0) {
+                    index = images.length - 1;
+                } else if (index >= images.length) {
+                    index = 0;
+                }
+                carouselImages.css('transform', `translateX(-${index * 100}%)`);
+                currentIndex = index;
+            }
+
+            prevButton.on('click', () => showImage(currentIndex - 1));
+            nextButton.on('click', () => showImage(currentIndex + 1));
+
+            // Automatically show the first image
+            showImage(currentIndex);
+
+            // Differentiators animation on page load
+            $('.differentiator').each(function(index) {
+                $(this).delay(index * 500).queue(function(next) {
+                    $(this).addClass('show');
+                    next();
+                });
+            });
+
+            // Typewriter effect for hero text
+            function typeWrite(element, textArray, index = 0) {
+                if (index < textArray.length) {
+                    element.innerHTML += textArray[index];
+                    setTimeout(() => typeWrite(element, textArray, index + 1), 75);
+                } else {
+                    setTimeout(() => deleteText(element, textArray), 2000);
+                }
+            }
+
+            function deleteText(element, textArray, index = textArray.length) {
+                if (index > 0) {
+                    element.innerHTML = textArray.slice(0, index - 1).join('');
+                    setTimeout(() => deleteText(element, textArray, index - 1), 75);
+                } else {
+                    setTimeout(() => typeWrite(element, textArray), 500);
+                }
+            }
+
+            const heroText = document.querySelector('.hero-text');
+            const heroTextContent = "Você pensa e nós criamos";
+            const heroTextArray = heroTextContent.split('');
+            typeWrite(heroText, heroTextArray);
+        });
+    </script>
+</body>
+</html>
