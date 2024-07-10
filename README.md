@@ -7,7 +7,7 @@ Neste repositório estarei organizando minhas soluções e meu progresso da 7ª 
 
 - [Soluções](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exercicios%20BackEnd)
 ## Front-End
-
+- [Soluções](https://github.com/gabrielandre-math/AcademiaJava/tree/main/Exerc%C3%ADcios%20FrontEnd)
 
 ## Banco de Dados
 - [Soluções](https://github.com/gabrielandre-math/AcademiaJavaAtos/tree/main/Exerc%C3%ADcios%20Banco%20de%20Dados)
