@@ -473,10 +473,9 @@
             prevButton.on('click', () => showImage(currentIndex - 1));
             nextButton.on('click', () => showImage(currentIndex + 1));
 
-            // Automatically show the first image
             showImage(currentIndex);
 
-            // Differentiators animation on page load
+           
             $('.differentiator').each(function(index) {
                 $(this).delay(index * 500).queue(function(next) {
                     $(this).addClass('show');
@@ -484,7 +483,7 @@
                 });
             });
 
-            // Typewriter effect for hero text
+            // Typewriter effect 
             function typeWrite(element, textArray, index = 0) {
                 if (index < textArray.length) {
                     element.innerHTML += textArray[index];
