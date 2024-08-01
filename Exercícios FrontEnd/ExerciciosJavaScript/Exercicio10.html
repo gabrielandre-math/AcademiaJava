@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 10</title>
+<script>
+function CampoToggle() {
+    var pessoaFisica = document.getElementById("pessoaFisica").checked;
+    document.getElementById("cpf").disabled = !pessoaFisica;
+    document.getElementById("cnpj").disabled = pessoaFisica;
+    document.getElementById("birthdate").disabled = !pessoaFisica;
+}
+
+function ValidaComRegex(event) {
+    if (!/[0-9]/.test(event.key)) { //Apelei pra Regex 
+        event.preventDefault();
+    }
+}
+</script>
+</head>
+<body>
+<form>
+    Nome: <input type="text" id="name"><br>
+    <input type="radio" id="pessoaFisica" name="tipoPessoa" value="fisica" onclick="CampoToggle()">Pessoa Física
+    <input type="radio" id="pessoaJuridica" name="tipoPessoa" value="juridica" onclick="CampoToggle()">Pessoa Jurídica<br>
+    CPF: <input type="text" id="cpf" disabled onkeypress="ValidaComRegex(event)"><br>
+    CNPJ: <input type="text" id="cnpj" disabled onkeypress="ValidaComRegex(event)"><br>
+    Data de Nascimento: <input type="text" id="birthdate" disabled onkeypress="ValidaComRegex(event)"><br>
+    Endereço: <input type="text" id="address"><br>
+    CEP: <input type="text" id="zipcode" onkeypress="ValidaComRegex(event)"><br>
+    Telefone: <input type="text" id="phone" onkeypress="ValidaComRegex(event)"><br>
+    Email: <input type="text" id="email"><br>
+    <button type="submit">Registrar</button>
+</form>
+</body>
+</html>

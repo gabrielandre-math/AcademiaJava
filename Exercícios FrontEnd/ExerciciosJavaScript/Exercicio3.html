@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 3</title>
+<script>
+function mudaFundo() {
+    var color = document.getElementById("colorSelect").value;
+    document.body.style.backgroundColor = color;
+}
+</script>
+</head>
+<body>
+<select id="colorSelect" onchange="mudaFundo()">
+    <option value="red">Vermelho</option>
+    <option value="green">Verde</option>
+    <option value="blue">Azul</option>
+    <option value="yellow">Amarelo</option>
+</select>
+</body>
+</html>

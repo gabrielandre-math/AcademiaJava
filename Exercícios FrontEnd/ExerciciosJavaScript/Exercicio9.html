@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 9</title>
+<script>
+function validaFormulario() {
+    var login = document.getElementById("login").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!login || !password || !confirmPassword) {
+        alert("Todos os campos precisam ser preenchidos.");
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert("As senhas não batem.");
+        return false;
+    }
+
+    if (password.length < 6 || password.length > 10) {
+        alert("A senha precisa ter entre 6 e 10 caracteres.");
+        return false;
+    }
+
+    return true;
+}
+</script>
+</head>
+<body>
+<form onsubmit="return validaFormulario()">
+    Login: <input type="text" id="login"><br>
+    Senha: <input type="password" id="password"><br>
+    Confirmar Senha: <input type="password" id="confirmPassword"><br>
+    <button type="submit">Registrar</button>
+</form>
+</body>
+</html>

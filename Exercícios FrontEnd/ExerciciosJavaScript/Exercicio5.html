@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 5</title>
+<script>
+function atualizaBotao() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    document.getElementById("submitBtn").disabled = checkboxes.length < 2;
+}
+</script>
+</head>
+<body>
+<form>
+    <input type="checkbox" onchange="atualizaBotao()">Item 1<br>
+    <input type="checkbox" onchange="atualizaBotao()">Item 2<br>
+    <input type="checkbox" onchange="atualizaBotao()">Item 3<br>
+    <button id="submitBtn" disabled>Enviar</button>
+</form>
+</body>
+</html>

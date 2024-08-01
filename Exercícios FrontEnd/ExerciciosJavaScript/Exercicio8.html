@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 8</title>
+<script>
+function mudaTexto(toUpper) {
+    var p = document.getElementById("myParagraph");
+    p.textContent = toUpper ? p.textContent.toUpperCase() : p.textContent.toLowerCase();
+}
+</script>
+</head>
+<body>
+<div>
+    <p id="myParagraph">Texto que vai mudar.</p>
+    <button onclick="mudaTexto(true)">MAIÚSCULA</button>
+    <button onclick="mudaTexto(false)">minúscula</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Exercício 6</title>
+<script>
+function mudaCorDaFonte(color) {
+    document.getElementById("myParagraph").style.color = color;
+}
+function mudaCorFundo(color) {
+    document.getElementById("myParagraph").style.backgroundColor = color;
+}
+</script>
+</head>
+<body>
+<div>
+    <p id="myParagraph">Texto do parágrafo.</p>
+    <button onclick="mudaCorDaFonte('white')">Branco</button>
+    <button onclick="mudaCorDaFonte('black')">Preto</button>
+    <button onclick="mudaCorFundo('black')">Fundo Preto</button>
+    <button onclick="mudaCorFundo('white')">Fundo Branco</button>
+</div>
+</body>
+</html>
